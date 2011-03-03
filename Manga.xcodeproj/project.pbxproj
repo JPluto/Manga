@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17148E31132044BA00552034 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17148E30132044BA00552034 /* UIKit.framework */; };
+		17148E33132044BA00552034 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17148E32132044BA00552034 /* Foundation.framework */; };
+		17148E35132044BA00552034 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17148E34132044BA00552034 /* CoreGraphics.framework */; };
+		17148E3B132044BA00552034 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17148E39132044BA00552034 /* InfoPlist.strings */; };
+		17148E3E132044BA00552034 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17148E3D132044BA00552034 /* main.m */; };
+		17148E41132044BA00552034 /* MangaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17148E40132044BA00552034 /* MangaAppDelegate.m */; };
+		17148E44132044BA00552034 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E42132044BA00552034 /* MainWindow.xib */; };
+		17148E47132044BA00552034 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17148E46132044BA00552034 /* RootViewController.m */; };
+		17148E4A132044BA00552034 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E48132044BA00552034 /* RootViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		17148E2C132044BA00552034 /* Manga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manga.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17148E30132044BA00552034 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		17148E32132044BA00552034 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		17148E34132044BA00552034 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		17148E38132044BA00552034 /* Manga-Info.plist */ = {isa = PBXFileReference; path = "Manga-Info.plist"; sourceTree = "<group>"; };
+		17148E3A132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17148E3C132044BA00552034 /* Manga-Prefix.pch */ = {isa = PBXFileReference; path = "Manga-Prefix.pch"; sourceTree = "<group>"; };
+		17148E3D132044BA00552034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		17148E3F132044BA00552034 /* MangaAppDelegate.h */ = {isa = PBXFileReference; path = MangaAppDelegate.h; sourceTree = "<group>"; };
+		17148E40132044BA00552034 /* MangaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MangaAppDelegate.m; sourceTree = "<group>"; };
+		17148E43132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		17148E45132044BA00552034 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		17148E46132044BA00552034 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		17148E49132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17148E29132044B900552034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17148E31132044BA00552034 /* UIKit.framework in Frameworks */,
+				17148E33132044BA00552034 /* Foundation.framework in Frameworks */,
+				17148E35132044BA00552034 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17148E21132044B900552034 = {
+			isa = PBXGroup;
+			children = (
+				17148E36132044BA00552034 /* Manga */,
+				17148E2F132044BA00552034 /* Frameworks */,
+				17148E2D132044BA00552034 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17148E2D132044BA00552034 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17148E2C132044BA00552034 /* Manga.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17148E2F132044BA00552034 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17148E30132044BA00552034 /* UIKit.framework */,
+				17148E32132044BA00552034 /* Foundation.framework */,
+				17148E34132044BA00552034 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17148E36132044BA00552034 /* Manga */ = {
+			isa = PBXGroup;
+			children = (
+				17148E3F132044BA00552034 /* MangaAppDelegate.h */,
+				17148E40132044BA00552034 /* MangaAppDelegate.m */,
+				17148E42132044BA00552034 /* MainWindow.xib */,
+				17148E45132044BA00552034 /* RootViewController.h */,
+				17148E46132044BA00552034 /* RootViewController.m */,
+				17148E48132044BA00552034 /* RootViewController.xib */,
+				17148E37132044BA00552034 /* Supporting Files */,
+			);
+			path = Manga;
+			sourceTree = "<group>";
+		};
+		17148E37132044BA00552034 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17148E38132044BA00552034 /* Manga-Info.plist */,
+				17148E39132044BA00552034 /* InfoPlist.strings */,
+				17148E3C132044BA00552034 /* Manga-Prefix.pch */,
+				17148E3D132044BA00552034 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17148E2B132044B900552034 /* Manga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17148E4D132044BA00552034 /* Build configuration list for PBXNativeTarget "Manga" */;
+			buildPhases = (
+				17148E28132044B900552034 /* Sources */,
+				17148E29132044B900552034 /* Frameworks */,
+				17148E2A132044B900552034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Manga;
+			productName = Manga;
+			productReference = 17148E2C132044BA00552034 /* Manga.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17148E23132044B900552034 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 17148E26132044B900552034 /* Build configuration list for PBXProject "Manga" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 17148E21132044B900552034;
+			productRefGroup = 17148E2D132044BA00552034 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17148E2B132044B900552034 /* Manga */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17148E2A132044B900552034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17148E3B132044BA00552034 /* InfoPlist.strings in Resources */,
+				17148E44132044BA00552034 /* MainWindow.xib in Resources */,
+				17148E4A132044BA00552034 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17148E28132044B900552034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17148E3E132044BA00552034 /* main.m in Sources */,
+				17148E41132044BA00552034 /* MangaAppDelegate.m in Sources */,
+				17148E47132044BA00552034 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		17148E39132044BA00552034 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17148E3A132044BA00552034 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		17148E42132044BA00552034 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17148E43132044BA00552034 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		17148E48132044BA00552034 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17148E49132044BA00552034 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17148E4B132044BA00552034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		17148E4C132044BA00552034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		17148E4E132044BA00552034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Manga/Manga-Prefix.pch";
+				INFOPLIST_FILE = "Manga/Manga-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		17148E4F132044BA00552034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Manga/Manga-Prefix.pch";
+				INFOPLIST_FILE = "Manga/Manga-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17148E26132044B900552034 /* Build configuration list for PBXProject "Manga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17148E4B132044BA00552034 /* Debug */,
+				17148E4C132044BA00552034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17148E4D132044BA00552034 /* Build configuration list for PBXNativeTarget "Manga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17148E4E132044BA00552034 /* Debug */,
+				17148E4F132044BA00552034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17148E23132044B900552034 /* Project object */;
+}
