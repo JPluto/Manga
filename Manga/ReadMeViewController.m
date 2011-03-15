@@ -11,7 +11,7 @@
 
 @implementation ReadMeViewController
 
-@synthesize readMeTextView;
+@synthesize textview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,7 +24,6 @@
 
 - (void)dealloc
 {
-    [readMeTextView release];
     [super dealloc];
 }
 
@@ -46,6 +45,7 @@
 
 - (void)viewDidUnload
 {
+    [textview release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
