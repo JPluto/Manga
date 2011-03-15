@@ -16,6 +16,38 @@
 		17148E44132044BA00552034 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E42132044BA00552034 /* MainWindow.xib */; };
 		17148E47132044BA00552034 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17148E46132044BA00552034 /* RootViewController.m */; };
 		17148E4A132044BA00552034 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E48132044BA00552034 /* RootViewController.xib */; };
+		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
+		1730D5F1132D824D00923309 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F0132D824D00923309 /* loading.jpg */; };
+		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
+		174CC774132FED60002B4589 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC773132FED60002B4589 /* Icon@2x.png */; };
+		174CC776132FED6A002B4589 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC775132FED6A002B4589 /* Icon.png */; };
+		174CC77C132FFEBF002B4589 /* ReadMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174CC77A132FFEBB002B4589 /* ReadMeViewController.m */; };
+		174CC77D132FFEBF002B4589 /* ReadMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174CC77B132FFEBC002B4589 /* ReadMeViewController.xib */; };
+		178B4956132E5C9D00C2661F /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B4954132E5C9D00C2661F /* ReadMangaViewController.m */; };
+		178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */; };
+		178B495B132E626200C2661F /* MangaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B495A132E626200C2661F /* MangaDetailView.m */; };
+		178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178B4962132E63F100C2661F /* QuartzCore.framework */; };
+		17A800B8132EA22400AEB472 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A8008E132EA22300AEB472 /* ioapi.c */; };
+		17A800B9132EA22400AEB472 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A80090132EA22300AEB472 /* mztools.c */; };
+		17A800BA132EA22400AEB472 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A80092132EA22300AEB472 /* unzip.c */; };
+		17A800BB132EA22400AEB472 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A80094132EA22400AEB472 /* zip.c */; };
+		17A800BC132EA22400AEB472 /* FileInZipInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A80098132EA22400AEB472 /* FileInZipInfo.m */; };
+		17A800BD132EA22400AEB472 /* ZipException.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8009A132EA22400AEB472 /* ZipException.m */; };
+		17A800BE132EA22400AEB472 /* ZipFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8009C132EA22400AEB472 /* ZipFile.m */; };
+		17A800BF132EA22400AEB472 /* ZipReadStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8009E132EA22400AEB472 /* ZipReadStream.m */; };
+		17A800C0132EA22400AEB472 /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A0132EA22400AEB472 /* ZipWriteStream.m */; };
+		17A800C1132EA22400AEB472 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A2132EA22400AEB472 /* adler32.c */; };
+		17A800C2132EA22400AEB472 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A3132EA22400AEB472 /* compress.c */; };
+		17A800C3132EA22400AEB472 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A4132EA22400AEB472 /* crc32.c */; };
+		17A800C4132EA22400AEB472 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A6132EA22400AEB472 /* deflate.c */; };
+		17A800C5132EA22400AEB472 /* gzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A8132EA22400AEB472 /* gzio.c */; };
+		17A800C6132EA22400AEB472 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800A9132EA22400AEB472 /* infback.c */; };
+		17A800C7132EA22400AEB472 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800AA132EA22400AEB472 /* inffast.c */; };
+		17A800C8132EA22400AEB472 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800AD132EA22400AEB472 /* inflate.c */; };
+		17A800C9132EA22400AEB472 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800AF132EA22400AEB472 /* inftrees.c */; };
+		17A800CA132EA22400AEB472 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B1132EA22400AEB472 /* trees.c */; };
+		17A800CB132EA22400AEB472 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B3132EA22400AEB472 /* uncompr.c */; };
+		17A800CC132EA22400AEB472 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B6132EA22400AEB472 /* zutil.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +55,72 @@
 		17148E30132044BA00552034 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17148E32132044BA00552034 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17148E34132044BA00552034 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		17148E38132044BA00552034 /* Manga-Info.plist */ = {isa = PBXFileReference; path = "Manga-Info.plist"; sourceTree = "<group>"; };
+		17148E38132044BA00552034 /* Manga-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Manga-Info.plist"; sourceTree = "<group>"; };
 		17148E3A132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		17148E3C132044BA00552034 /* Manga-Prefix.pch */ = {isa = PBXFileReference; path = "Manga-Prefix.pch"; sourceTree = "<group>"; };
+		17148E3C132044BA00552034 /* Manga-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Manga-Prefix.pch"; sourceTree = "<group>"; };
 		17148E3D132044BA00552034 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		17148E3F132044BA00552034 /* MangaAppDelegate.h */ = {isa = PBXFileReference; path = MangaAppDelegate.h; sourceTree = "<group>"; };
+		17148E3F132044BA00552034 /* MangaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MangaAppDelegate.h; sourceTree = "<group>"; };
 		17148E40132044BA00552034 /* MangaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MangaAppDelegate.m; sourceTree = "<group>"; };
 		17148E43132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		17148E45132044BA00552034 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		17148E45132044BA00552034 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		17148E46132044BA00552034 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		17148E49132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
+		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
+		1730D5F0132D824D00923309 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
+		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		174CC773132FED60002B4589 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		174CC775132FED6A002B4589 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		174CC779132FFEBA002B4589 /* ReadMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMeViewController.h; sourceTree = "<group>"; };
+		174CC77A132FFEBB002B4589 /* ReadMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMeViewController.m; sourceTree = "<group>"; };
+		174CC77B132FFEBC002B4589 /* ReadMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadMeViewController.xib; sourceTree = "<group>"; };
+		178B4953132E5C9D00C2661F /* ReadMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadMangaViewController.h; path = Manga.xcodeproj/ReadMangaViewController.h; sourceTree = SOURCE_ROOT; };
+		178B4954132E5C9D00C2661F /* ReadMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadMangaViewController.m; path = Manga.xcodeproj/ReadMangaViewController.m; sourceTree = SOURCE_ROOT; };
+		178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReadMangaViewController.xib; path = Manga.xcodeproj/ReadMangaViewController.xib; sourceTree = SOURCE_ROOT; };
+		178B4959132E626200C2661F /* MangaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaDetailView.h; sourceTree = "<group>"; };
+		178B495A132E626200C2661F /* MangaDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaDetailView.m; sourceTree = "<group>"; };
+		178B4962132E63F100C2661F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17A8008D132EA22300AEB472 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		17A8008E132EA22300AEB472 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		17A8008F132EA22300AEB472 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		17A80090132EA22300AEB472 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		17A80091132EA22300AEB472 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		17A80092132EA22300AEB472 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		17A80093132EA22400AEB472 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		17A80094132EA22400AEB472 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		17A80095132EA22400AEB472 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		17A80097132EA22400AEB472 /* FileInZipInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileInZipInfo.h; sourceTree = "<group>"; };
+		17A80098132EA22400AEB472 /* FileInZipInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileInZipInfo.m; sourceTree = "<group>"; };
+		17A80099132EA22400AEB472 /* ZipException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipException.h; sourceTree = "<group>"; };
+		17A8009A132EA22400AEB472 /* ZipException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipException.m; sourceTree = "<group>"; };
+		17A8009B132EA22400AEB472 /* ZipFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipFile.h; sourceTree = "<group>"; };
+		17A8009C132EA22400AEB472 /* ZipFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipFile.m; sourceTree = "<group>"; };
+		17A8009D132EA22400AEB472 /* ZipReadStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipReadStream.h; sourceTree = "<group>"; };
+		17A8009E132EA22400AEB472 /* ZipReadStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipReadStream.m; sourceTree = "<group>"; };
+		17A8009F132EA22400AEB472 /* ZipWriteStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipWriteStream.h; sourceTree = "<group>"; };
+		17A800A0132EA22400AEB472 /* ZipWriteStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipWriteStream.m; sourceTree = "<group>"; };
+		17A800A2132EA22400AEB472 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
+		17A800A3132EA22400AEB472 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
+		17A800A4132EA22400AEB472 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		17A800A5132EA22400AEB472 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		17A800A6132EA22400AEB472 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		17A800A7132EA22400AEB472 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		17A800A8132EA22400AEB472 /* gzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzio.c; sourceTree = "<group>"; };
+		17A800A9132EA22400AEB472 /* infback.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infback.c; sourceTree = "<group>"; };
+		17A800AA132EA22400AEB472 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inffast.c; sourceTree = "<group>"; };
+		17A800AB132EA22400AEB472 /* inffast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffast.h; sourceTree = "<group>"; };
+		17A800AC132EA22400AEB472 /* inffixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffixed.h; sourceTree = "<group>"; };
+		17A800AD132EA22400AEB472 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inflate.c; sourceTree = "<group>"; };
+		17A800AE132EA22400AEB472 /* inflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inflate.h; sourceTree = "<group>"; };
+		17A800AF132EA22400AEB472 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inftrees.c; sourceTree = "<group>"; };
+		17A800B0132EA22400AEB472 /* inftrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inftrees.h; sourceTree = "<group>"; };
+		17A800B1132EA22400AEB472 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
+		17A800B2132EA22400AEB472 /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees.h; sourceTree = "<group>"; };
+		17A800B3132EA22400AEB472 /* uncompr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uncompr.c; sourceTree = "<group>"; };
+		17A800B4132EA22400AEB472 /* zconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zconf.h; sourceTree = "<group>"; };
+		17A800B5132EA22400AEB472 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
+		17A800B6132EA22400AEB472 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
+		17A800B7132EA22400AEB472 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */,
 				17148E31132044BA00552034 /* UIKit.framework in Frameworks */,
 				17148E33132044BA00552034 /* Foundation.framework in Frameworks */,
 				17148E35132044BA00552034 /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +158,7 @@
 		17148E2F132044BA00552034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				178B4962132E63F100C2661F /* QuartzCore.framework */,
 				17148E30132044BA00552034 /* UIKit.framework */,
 				17148E32132044BA00552034 /* Foundation.framework */,
 				17148E34132044BA00552034 /* CoreGraphics.framework */,
@@ -79,6 +169,14 @@
 		17148E36132044BA00552034 /* Manga */ = {
 			isa = PBXGroup;
 			children = (
+				17A8008A132EA21300AEB472 /* Zip */,
+				178B4958132E624300C2661F /* SubViews */,
+				174CC779132FFEBA002B4589 /* ReadMeViewController.h */,
+				174CC77A132FFEBB002B4589 /* ReadMeViewController.m */,
+				174CC77B132FFEBC002B4589 /* ReadMeViewController.xib */,
+				178B4953132E5C9D00C2661F /* ReadMangaViewController.h */,
+				178B4954132E5C9D00C2661F /* ReadMangaViewController.m */,
+				178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */,
 				17148E3F132044BA00552034 /* MangaAppDelegate.h */,
 				17148E40132044BA00552034 /* MangaAppDelegate.m */,
 				17148E42132044BA00552034 /* MainWindow.xib */,
@@ -93,12 +191,107 @@
 		17148E37132044BA00552034 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				174CC778132FED88002B4589 /* Images */,
+				1730D5ED132D7B6D00923309 /* FileUtils.h */,
+				1730D5EE132D7B6D00923309 /* FileUtils.m */,
 				17148E38132044BA00552034 /* Manga-Info.plist */,
 				17148E39132044BA00552034 /* InfoPlist.strings */,
 				17148E3C132044BA00552034 /* Manga-Prefix.pch */,
 				17148E3D132044BA00552034 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		174CC778132FED88002B4589 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				174CC775132FED6A002B4589 /* Icon.png */,
+				174CC773132FED60002B4589 /* Icon@2x.png */,
+				1730D5F0132D824D00923309 /* loading.jpg */,
+				1730D5F2132D839100923309 /* loading.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		178B4958132E624300C2661F /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				178B4959132E626200C2661F /* MangaDetailView.h */,
+				178B495A132E626200C2661F /* MangaDetailView.m */,
+			);
+			name = SubViews;
+			sourceTree = "<group>";
+		};
+		17A8008A132EA21300AEB472 /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				17A8008C132EA22300AEB472 /* MiniZip */,
+				17A80096132EA22400AEB472 /* Objective-Zip */,
+				17A800A1132EA22400AEB472 /* ZLib */,
+			);
+			name = Zip;
+			sourceTree = "<group>";
+		};
+		17A8008C132EA22300AEB472 /* MiniZip */ = {
+			isa = PBXGroup;
+			children = (
+				17A8008D132EA22300AEB472 /* crypt.h */,
+				17A8008E132EA22300AEB472 /* ioapi.c */,
+				17A8008F132EA22300AEB472 /* ioapi.h */,
+				17A80090132EA22300AEB472 /* mztools.c */,
+				17A80091132EA22300AEB472 /* mztools.h */,
+				17A80092132EA22300AEB472 /* unzip.c */,
+				17A80093132EA22400AEB472 /* unzip.h */,
+				17A80094132EA22400AEB472 /* zip.c */,
+				17A80095132EA22400AEB472 /* zip.h */,
+			);
+			path = MiniZip;
+			sourceTree = "<group>";
+		};
+		17A80096132EA22400AEB472 /* Objective-Zip */ = {
+			isa = PBXGroup;
+			children = (
+				17A80097132EA22400AEB472 /* FileInZipInfo.h */,
+				17A80098132EA22400AEB472 /* FileInZipInfo.m */,
+				17A80099132EA22400AEB472 /* ZipException.h */,
+				17A8009A132EA22400AEB472 /* ZipException.m */,
+				17A8009B132EA22400AEB472 /* ZipFile.h */,
+				17A8009C132EA22400AEB472 /* ZipFile.m */,
+				17A8009D132EA22400AEB472 /* ZipReadStream.h */,
+				17A8009E132EA22400AEB472 /* ZipReadStream.m */,
+				17A8009F132EA22400AEB472 /* ZipWriteStream.h */,
+				17A800A0132EA22400AEB472 /* ZipWriteStream.m */,
+			);
+			path = "Objective-Zip";
+			sourceTree = "<group>";
+		};
+		17A800A1132EA22400AEB472 /* ZLib */ = {
+			isa = PBXGroup;
+			children = (
+				17A800A2132EA22400AEB472 /* adler32.c */,
+				17A800A3132EA22400AEB472 /* compress.c */,
+				17A800A4132EA22400AEB472 /* crc32.c */,
+				17A800A5132EA22400AEB472 /* crc32.h */,
+				17A800A6132EA22400AEB472 /* deflate.c */,
+				17A800A7132EA22400AEB472 /* deflate.h */,
+				17A800A8132EA22400AEB472 /* gzio.c */,
+				17A800A9132EA22400AEB472 /* infback.c */,
+				17A800AA132EA22400AEB472 /* inffast.c */,
+				17A800AB132EA22400AEB472 /* inffast.h */,
+				17A800AC132EA22400AEB472 /* inffixed.h */,
+				17A800AD132EA22400AEB472 /* inflate.c */,
+				17A800AE132EA22400AEB472 /* inflate.h */,
+				17A800AF132EA22400AEB472 /* inftrees.c */,
+				17A800B0132EA22400AEB472 /* inftrees.h */,
+				17A800B1132EA22400AEB472 /* trees.c */,
+				17A800B2132EA22400AEB472 /* trees.h */,
+				17A800B3132EA22400AEB472 /* uncompr.c */,
+				17A800B4132EA22400AEB472 /* zconf.h */,
+				17A800B5132EA22400AEB472 /* zlib.h */,
+				17A800B6132EA22400AEB472 /* zutil.c */,
+				17A800B7132EA22400AEB472 /* zutil.h */,
+			);
+			path = ZLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +344,12 @@
 				17148E3B132044BA00552034 /* InfoPlist.strings in Resources */,
 				17148E44132044BA00552034 /* MainWindow.xib in Resources */,
 				17148E4A132044BA00552034 /* RootViewController.xib in Resources */,
+				1730D5F1132D824D00923309 /* loading.jpg in Resources */,
+				1730D5F3132D839100923309 /* loading.png in Resources */,
+				178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */,
+				174CC774132FED60002B4589 /* Icon@2x.png in Resources */,
+				174CC776132FED6A002B4589 /* Icon.png in Resources */,
+				174CC77D132FFEBF002B4589 /* ReadMeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +363,31 @@
 				17148E3E132044BA00552034 /* main.m in Sources */,
 				17148E41132044BA00552034 /* MangaAppDelegate.m in Sources */,
 				17148E47132044BA00552034 /* RootViewController.m in Sources */,
+				1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */,
+				178B4956132E5C9D00C2661F /* ReadMangaViewController.m in Sources */,
+				178B495B132E626200C2661F /* MangaDetailView.m in Sources */,
+				17A800B8132EA22400AEB472 /* ioapi.c in Sources */,
+				17A800B9132EA22400AEB472 /* mztools.c in Sources */,
+				17A800BA132EA22400AEB472 /* unzip.c in Sources */,
+				17A800BB132EA22400AEB472 /* zip.c in Sources */,
+				17A800BC132EA22400AEB472 /* FileInZipInfo.m in Sources */,
+				17A800BD132EA22400AEB472 /* ZipException.m in Sources */,
+				17A800BE132EA22400AEB472 /* ZipFile.m in Sources */,
+				17A800BF132EA22400AEB472 /* ZipReadStream.m in Sources */,
+				17A800C0132EA22400AEB472 /* ZipWriteStream.m in Sources */,
+				17A800C1132EA22400AEB472 /* adler32.c in Sources */,
+				17A800C2132EA22400AEB472 /* compress.c in Sources */,
+				17A800C3132EA22400AEB472 /* crc32.c in Sources */,
+				17A800C4132EA22400AEB472 /* deflate.c in Sources */,
+				17A800C5132EA22400AEB472 /* gzio.c in Sources */,
+				17A800C6132EA22400AEB472 /* infback.c in Sources */,
+				17A800C7132EA22400AEB472 /* inffast.c in Sources */,
+				17A800C8132EA22400AEB472 /* inflate.c in Sources */,
+				17A800C9132EA22400AEB472 /* inftrees.c in Sources */,
+				17A800CA132EA22400AEB472 /* trees.c in Sources */,
+				17A800CB132EA22400AEB472 /* uncompr.c in Sources */,
+				17A800CC132EA22400AEB472 /* zutil.c in Sources */,
+				174CC77C132FFEBF002B4589 /* ReadMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +462,7 @@
 				GCC_PREFIX_HEADER = "Manga/Manga-Prefix.pch";
 				INFOPLIST_FILE = "Manga/Manga-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -252,6 +477,7 @@
 				GCC_PREFIX_HEADER = "Manga/Manga-Prefix.pch";
 				INFOPLIST_FILE = "Manga/Manga-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -277,6 +503,7 @@
 				17148E4F132044BA00552034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

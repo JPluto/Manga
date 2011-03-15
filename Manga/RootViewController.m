@@ -7,12 +7,15 @@
 //
 
 #import "RootViewController.h"
+#import "ReadMangaViewController.h"
 
 @implementation RootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    comicArray = [FileUtils listFiles];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,19 +54,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [comicArray count];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    CellIdentifier = [comicArray objectAtIndex:[indexPath row]];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
+    [[cell textLabel] setText:[[[comicArray objectAtIndex:[indexPath row]] lastPathComponent] stringByDeletingPathExtension]];
     // Configure the cell.
     return cell;
 }
@@ -111,13 +116,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    NSString * mangaName = [comicArray objectAtIndex:[indexPath row]];
+    ReadMangaViewController *detailViewController = [[ReadMangaViewController alloc] init];
+    [detailViewController setMangaName:mangaName];
     // ...
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
-	*/
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,7 +139,7 @@
     [super viewDidUnload];
 
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+    // For example: self.myOutlet = nil; 
 }
 
 - (void)dealloc

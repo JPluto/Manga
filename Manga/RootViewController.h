@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FileUtils.h"
 
 @interface RootViewController : UITableViewController {
-
+    NSArray * comicArray;
 }
 
 
