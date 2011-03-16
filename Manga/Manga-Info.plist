@@ -84,12 +84,15 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>cbz</string>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
 			<key>CFBundleTypeName</key>
 			<string>Comic Zip</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>com.epicwin.cbz-archive</string>
 				<string>com.macitbetter.cbz-archive</string>
 				<string>public.cbz-archive</string>
 				<string>cx.c3.cbz-archive</string>
@@ -134,6 +137,8 @@
 	<string>MainWindow</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -153,10 +158,8 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Comic Book Zip Archive</string>
-			<key>UTTypeIconFile</key>
-			<string>sc_cbz</string>
 			<key>UTTypeIdentifier</key>
-			<string>cx.c3.cbz-archive</string>
+			<string>com.epicwin.cbz-archive</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.ostype</key>
