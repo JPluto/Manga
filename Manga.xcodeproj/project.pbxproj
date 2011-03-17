@@ -17,7 +17,6 @@
 		17148E47132044BA00552034 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17148E46132044BA00552034 /* RootViewController.m */; };
 		17148E4A132044BA00552034 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E48132044BA00552034 /* RootViewController.xib */; };
 		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
-		1730D5F1132D824D00923309 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F0132D824D00923309 /* loading.jpg */; };
 		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
 		174CC774132FED60002B4589 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC773132FED60002B4589 /* Icon@2x.png */; };
 		174CC776132FED6A002B4589 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC775132FED6A002B4589 /* Icon.png */; };
@@ -66,7 +65,6 @@
 		17148E49132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
-		1730D5F0132D824D00923309 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
 		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		174CC773132FED60002B4589 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		174CC775132FED6A002B4589 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			children = (
 				174CC775132FED6A002B4589 /* Icon.png */,
 				174CC773132FED60002B4589 /* Icon@2x.png */,
-				1730D5F0132D824D00923309 /* loading.jpg */,
 				1730D5F2132D839100923309 /* loading.png */,
 			);
 			name = Images;
@@ -364,7 +361,6 @@
 				17148E3B132044BA00552034 /* InfoPlist.strings in Resources */,
 				17148E44132044BA00552034 /* MainWindow.xib in Resources */,
 				17148E4A132044BA00552034 /* RootViewController.xib in Resources */,
-				1730D5F1132D824D00923309 /* loading.jpg in Resources */,
 				1730D5F3132D839100923309 /* loading.png in Resources */,
 				178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */,
 				174CC774132FED60002B4589 /* Icon@2x.png in Resources */,
