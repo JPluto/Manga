@@ -21,8 +21,6 @@
 		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
 		174CC774132FED60002B4589 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC773132FED60002B4589 /* Icon@2x.png */; };
 		174CC776132FED6A002B4589 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC775132FED6A002B4589 /* Icon.png */; };
-		1754AA66133028BE00105979 /* closepanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1754AA65133028BE00105979 /* closepanel.png */; };
-		1754AA69133029AF00105979 /* closepaneltouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1754AA68133029AF00105979 /* closepaneltouch.png */; };
 		178B4956132E5C9D00C2661F /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B4954132E5C9D00C2661F /* ReadMangaViewController.m */; };
 		178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */; };
 		178B495B132E626200C2661F /* MangaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B495A132E626200C2661F /* MangaDetailView.m */; };
@@ -48,6 +46,7 @@
 		17A800CA132EA22400AEB472 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B1132EA22400AEB472 /* trees.c */; };
 		17A800CB132EA22400AEB472 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B3132EA22400AEB472 /* uncompr.c */; };
 		17A800CC132EA22400AEB472 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B6132EA22400AEB472 /* zutil.c */; };
+		17C02FBF13311ED3007C0F52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C02FBE13311ED3007C0F52 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +70,6 @@
 		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		174CC773132FED60002B4589 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		174CC775132FED6A002B4589 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		1754AA65133028BE00105979 /* closepanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closepanel.png; sourceTree = "<group>"; };
-		1754AA68133029AF00105979 /* closepaneltouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closepaneltouch.png; sourceTree = "<group>"; };
 		178B4953132E5C9D00C2661F /* ReadMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadMangaViewController.h; path = Manga.xcodeproj/ReadMangaViewController.h; sourceTree = SOURCE_ROOT; };
 		178B4954132E5C9D00C2661F /* ReadMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadMangaViewController.m; path = Manga.xcodeproj/ReadMangaViewController.m; sourceTree = SOURCE_ROOT; };
 		178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReadMangaViewController.xib; path = Manga.xcodeproj/ReadMangaViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -120,6 +117,7 @@
 		17A800B5132EA22400AEB472 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		17A800B6132EA22400AEB472 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		17A800B7132EA22400AEB472 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		17C02FBE13311ED3007C0F52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C02FBF13311ED3007C0F52 /* MapKit.framework in Frameworks */,
 				178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */,
 				17148E31132044BA00552034 /* UIKit.framework in Frameworks */,
 				17148E33132044BA00552034 /* Foundation.framework in Frameworks */,
@@ -157,6 +156,7 @@
 		17148E2F132044BA00552034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17C02FBE13311ED3007C0F52 /* MapKit.framework */,
 				178B4962132E63F100C2661F /* QuartzCore.framework */,
 				17148E30132044BA00552034 /* UIKit.framework */,
 				17148E32132044BA00552034 /* Foundation.framework */,
@@ -196,8 +196,6 @@
 		174CC778132FED88002B4589 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1754AA68133029AF00105979 /* closepaneltouch.png */,
-				1754AA65133028BE00105979 /* closepanel.png */,
 				174CC775132FED6A002B4589 /* Icon.png */,
 				174CC773132FED60002B4589 /* Icon@2x.png */,
 				1730D5F0132D824D00923309 /* loading.jpg */,
@@ -371,8 +369,6 @@
 				178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */,
 				174CC774132FED60002B4589 /* Icon@2x.png in Resources */,
 				174CC776132FED6A002B4589 /* Icon.png in Resources */,
-				1754AA66133028BE00105979 /* closepanel.png in Resources */,
-				1754AA69133029AF00105979 /* closepaneltouch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,14 +473,19 @@
 		17148E4E132044BA00552034 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Manga/Manga-Prefix.pch";
+				HEADER_SEARCH_PATHS = Users/hiddejansen/Documents/Projects/Tapku/tapkulibrary;
 				INFOPLIST_FILE = "Manga/Manga-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -493,13 +494,18 @@
 		17148E4F132044BA00552034 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Manga/Manga-Prefix.pch";
+				HEADER_SEARCH_PATHS = Users/hiddejansen/Documents/Projects/Tapku/tapkulibrary;
 				INFOPLIST_FILE = "Manga/Manga-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

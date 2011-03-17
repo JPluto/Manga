@@ -7,7 +7,10 @@
 //
 
 #import <QuartzCore/QuartzCore.h> 
+
 #import "ReadMangaViewController.h"
+
+
 #import "ZipFile.h"
 #import "ZipException.h"
 #import "FileInZipInfo.h"
@@ -51,12 +54,35 @@
 #pragma mark - View lifecycle
 
 -(void)viewDidAppear:(BOOL)animated {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString * filePath = [documentsDirectory stringByAppendingPathComponent:mangaName];
+    NSArray *documentsPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [documentsPaths objectAtIndex:0];
+    NSString * zipFilePath = [documentsDirectory stringByAppendingPathComponent:mangaName];
     
+    NSArray * cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString * cacheDirectory = [cachePaths objectAtIndex:0];
+    NSString * mangaDirectory = [cacheDirectory stringByAppendingPathComponent:[mangaName stringByDeletingPathExtension]];
+    
+    NSFileManager * filemanager = [NSFileManager defaultManager];
+    
+    //Manga cache directory does not exist: proceed by creating and extracting
+    BOOL isDir;
+    if(![filemanager fileExistsAtPath:mangaDirectory isDirectory:&isDir] || !isDir)
+    {
+        zipThread= [[NSThread alloc] initWithTarget:self selector:@selector(extractImagesFromZip:) object:zipFilePath];
+        [zipThread start];
+    }
+    else
+    {
+        [readMeDetailView setText:[self scanMangaDirForReadMe:mangaDirectory]];
+        [loadingLabel setText:@"Manga loaded"];
+        [ReadMangaButton setEnabled:YES];
+        [zipProgressView setHidden:YES];
+    }
+    
+    
+    /*
     readmeThread= [[NSThread alloc] initWithTarget:self selector:@selector(scanZipForTextFile:) object:filePath];
-	[readmeThread start];
+	[readmeThread start];*/
 }
 
 - (void)viewDidLoad
@@ -77,6 +103,13 @@
     ReadMeView.layer.shadowRadius = 10;
 }
 
+
+- (NSString*)scanMangaDirForReadMe:(NSString*)mangaDir {
+    
+    return @"File contains no additional information.";
+}
+
+/*
 - (void)scanZipForTextFile:(NSString*)zipName{
     NSAutoreleasePool *pool= [[NSAutoreleasePool alloc] init];
     
@@ -88,37 +121,13 @@
         // Locate the file in the zip
         [unzipFile locateFileInZip:info.name];
         
-        
-        if([info.name hasSuffix:@".txt"] || [info.name hasSuffix:@".TXT"])
-        {
-            NSLog(@"%@ == text file", info.name);
-            // Expand the file in memory
-            ZipReadStream *read= [unzipFile readCurrentFileInZip];
-            NSMutableData *data= [[NSMutableData alloc] initWithLength:256];
-            int bytesRead= [read readDataWithBuffer:data];
-            [read finishedReading];
-            readmeString = [[[NSString alloc] initWithBytes:[data bytes] length:bytesRead encoding:NSUTF8StringEncoding] autorelease];
-        }
     }
     [unzipFile close];
     [unzipFile release];
     
-    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString * cacheDirectory = [paths objectAtIndex:0];
-    NSString * mangaDirectory = [cacheDirectory stringByAppendingPathComponent:[mangaName stringByDeletingPathExtension]];
-    
-    NSFileManager * filemanager = [NSFileManager defaultManager];
-    
-    //Dir does not exist: create it
-    BOOL isDir;
-    if(![filemanager fileExistsAtPath:mangaDirectory isDirectory:&isDir] || !isDir)
-    {
-        zipThread= [[NSThread alloc] initWithTarget:self selector:@selector(extractImagesFromZip:) object:zipName];
-        [zipThread start];
-    }
 	[pool drain];
 }
-
+*/
 - (void)extractImagesFromZip:(NSString*)zipName {
     NSAutoreleasePool *pool= [[NSAutoreleasePool alloc] init];
     
@@ -141,49 +150,79 @@
     if(![filemanager fileExistsAtPath:mangaDirectory isDirectory:&isDir] || !isDir)
     {
         [filemanager createDirectoryAtPath:mangaDirectory withIntermediateDirectories:NO attributes:nil error:NULL];
-    }
-    
-    for (FileInZipInfo *info in infos) {
-        //NSLog(@"- %@ %@ %d (%d)", info.name, info.date, info.size, info.level);
         
-        // Locate the file in the zip
-        [unzipFile locateFileInZip:info.name];
-        
-        
-        if([info.name hasSuffix:@".jpg"] || [info.name hasSuffix:@".JPG"] || [info.name hasSuffix:@".PNG"] || [info.name hasSuffix:@".png"] || [info.name hasSuffix:@".GIF"] || [info.name hasSuffix:@".gif"])
-        {
-            NSLog(@"%@ == image file", info.name);
+        for (FileInZipInfo *info in infos) {
+            //NSLog(@"- %@ %@ %d (%d)", info.name, info.date, info.size, info.level);
             
-            NSMutableArray * targetPathComponents = [NSMutableArray arrayWithCapacity:[[info.name pathComponents] count]];
-            [targetPathComponents addObjectsFromArray:[info.name pathComponents]];
-            [targetPathComponents removeLastObject];
+            // Locate the file in the zip
+            [unzipFile locateFileInZip:info.name];
             
-            if([targetPathComponents count] >= 1)
+            
+            if([info.name hasSuffix:@".jpg"] || [info.name hasSuffix:@".JPG"] || [info.name hasSuffix:@".PNG"] || [info.name hasSuffix:@".png"] || [info.name hasSuffix:@".GIF"] || [info.name hasSuffix:@".gif"])
             {
-                [self createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
+                NSLog(@"%@ == image file", info.name);
+                
+                NSMutableArray * targetPathComponents = [NSMutableArray arrayWithCapacity:[[info.name pathComponents] count]];
+                [targetPathComponents addObjectsFromArray:[info.name pathComponents]];
+                [targetPathComponents removeLastObject];
+                
+                if([targetPathComponents count] >= 1)
+                {
+                    [self createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
+                }
+                
+                // Expand the file in memory
+                ZipReadStream *read= [unzipFile readCurrentFileInZip];
+                NSMutableData *data= [[NSMutableData alloc] initWithLength:info.length];
+                int bytesRead= [read readDataWithBuffer:data];
+                [read finishedReading];
+                
+                NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:info.name];
+                
+                [self createFileWithData:data atPath:theTargetDir];
+                
+                //Update Progress
+                count++;
+                progress = (float) count / [infos count];
+                [self performSelectorOnMainThread:@selector(loadingProgress:) withObject:[NSNumber numberWithFloat:progress] waitUntilDone:NO];
+                [zipProgressView setProgress:progress];
+                NSLog(@"Progress %f", progress);
+                
+                targetPathComponents = nil;
             }
             
-            // Expand the file in memory
-            ZipReadStream *read= [unzipFile readCurrentFileInZip];
-            NSMutableData *data= [[NSMutableData alloc] initWithLength:info.length];
-            int bytesRead= [read readDataWithBuffer:data];
-            [read finishedReading];
-            
-            NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:info.name];
-            
-            [self createFileWithData:data atPath:theTargetDir];
-            
-            //Update Progress
-            count++;
-            progress = (float) count / [infos count];
-            [self performSelectorOnMainThread:@selector(loadingProgress:) withObject:[NSNumber numberWithFloat:progress] waitUntilDone:NO];
-            [zipProgressView setProgress:progress];
-            NSLog(@"Progress %f", progress);
-            
-            targetPathComponents = nil;
+            if([info.name hasSuffix:@".txt"] || [info.name hasSuffix:@".TXT"])
+            {
+                NSLog(@"%@ == text file", info.name);
+                NSMutableArray * targetPathComponents = [NSMutableArray arrayWithCapacity:[[info.name pathComponents] count]];
+                [targetPathComponents addObjectsFromArray:[info.name pathComponents]];
+                [targetPathComponents removeLastObject];
+                
+                if([targetPathComponents count] >= 1)
+                {
+                    [self createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
+                }
+                
+                // Expand the file in memory
+                ZipReadStream *read= [unzipFile readCurrentFileInZip];
+                NSMutableData *data= [[NSMutableData alloc] initWithLength:info.length];
+                int bytesRead= [read readDataWithBuffer:data];
+                [read finishedReading];
+                
+                //Set the info's on the screen
+                readmeString = [[[NSString alloc] initWithBytes:[data bytes] length:bytesRead encoding:NSUTF8StringEncoding] autorelease];
+                [readMeDetailView performSelectorOnMainThread:@selector(setText:) withObject:readmeString waitUntilDone:NO];
+                
+                //Save the file
+                NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:info.name];
+                [self createFileWithData:data atPath:theTargetDir];
+
+                targetPathComponents = nil;
+            }
         }
+        [zipProgressView setProgress:1];
     }
-    [zipProgressView setProgress:1];
+    
     [unzipFile close];
     [unzipFile release];
     
@@ -237,8 +276,6 @@
 }
 
 - (void)showReadMe {
-    [readMeDetailView setText:readmeString];
-    
     CGRect viewFrame = [OptionView frame];
     viewFrame.origin.y = 480;
     ReadMeView.frame = viewFrame;
@@ -276,7 +313,6 @@
 - (void)viewDidUnload
 {
     [titleLabel release];
-    [infoBox release];
     [OptionView release];
     [ReadMeView release];
     [readMeDetailView release];

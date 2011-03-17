@@ -33,7 +33,8 @@
 @property (nonatomic, retain) IBOutlet UIProgressView *zipProgressView;
 
 - (void)setMangaName:(NSString*)newName;
-- (void)scanZipForTextFile:(NSString*)zipName;
+//- (void)scanZipForTextFile:(NSString*)zipName;
+- (NSString*)scanMangaDirForReadMe:(NSString*)mangaDir;
 - (void)extractImagesFromZip:(NSString*)zipName;
 - (void)createFileWithData:(NSData*)data atPath:(NSString*)filePath;
 - (void)createDirWithTargetPathComponents:(NSArray*)targetPathComponents withMangaDir:(NSString*)mangaDir;
