@@ -18,10 +18,10 @@
 		17148E4A132044BA00552034 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E48132044BA00552034 /* RootViewController.xib */; };
 		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
 		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
+		173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173F23971332ABA2003647F0 /* ReadMangaViewController.m */; };
+		173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173F23981332ABA2003647F0 /* ReadMangaViewController.xib */; };
 		174CC774132FED60002B4589 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC773132FED60002B4589 /* Icon@2x.png */; };
 		174CC776132FED6A002B4589 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC775132FED6A002B4589 /* Icon.png */; };
-		178B4956132E5C9D00C2661F /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B4954132E5C9D00C2661F /* ReadMangaViewController.m */; };
-		178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */; };
 		178B495B132E626200C2661F /* MangaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B495A132E626200C2661F /* MangaDetailView.m */; };
 		178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178B4962132E63F100C2661F /* QuartzCore.framework */; };
 		17A800B8132EA22400AEB472 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A8008E132EA22300AEB472 /* ioapi.c */; };
@@ -66,11 +66,11 @@
 		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		173F23961332ABA2003647F0 /* ReadMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMangaViewController.h; sourceTree = "<group>"; };
+		173F23971332ABA2003647F0 /* ReadMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMangaViewController.m; sourceTree = "<group>"; };
+		173F23981332ABA2003647F0 /* ReadMangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadMangaViewController.xib; sourceTree = "<group>"; };
 		174CC773132FED60002B4589 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		174CC775132FED6A002B4589 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		178B4953132E5C9D00C2661F /* ReadMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadMangaViewController.h; path = Manga.xcodeproj/ReadMangaViewController.h; sourceTree = SOURCE_ROOT; };
-		178B4954132E5C9D00C2661F /* ReadMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadMangaViewController.m; path = Manga.xcodeproj/ReadMangaViewController.m; sourceTree = SOURCE_ROOT; };
-		178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReadMangaViewController.xib; path = Manga.xcodeproj/ReadMangaViewController.xib; sourceTree = SOURCE_ROOT; };
 		178B4959132E626200C2661F /* MangaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaDetailView.h; sourceTree = "<group>"; };
 		178B495A132E626200C2661F /* MangaDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaDetailView.m; sourceTree = "<group>"; };
 		178B4962132E63F100C2661F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -204,9 +204,9 @@
 		174CC78C1330049E002B4589 /* ReadMangaViewController */ = {
 			isa = PBXGroup;
 			children = (
-				178B4953132E5C9D00C2661F /* ReadMangaViewController.h */,
-				178B4954132E5C9D00C2661F /* ReadMangaViewController.m */,
-				178B4955132E5C9D00C2661F /* ReadMangaViewController.xib */,
+				173F23961332ABA2003647F0 /* ReadMangaViewController.h */,
+				173F23971332ABA2003647F0 /* ReadMangaViewController.m */,
+				173F23981332ABA2003647F0 /* ReadMangaViewController.xib */,
 			);
 			name = ReadMangaViewController;
 			sourceTree = "<group>";
@@ -362,9 +362,9 @@
 				17148E44132044BA00552034 /* MainWindow.xib in Resources */,
 				17148E4A132044BA00552034 /* RootViewController.xib in Resources */,
 				1730D5F3132D839100923309 /* loading.png in Resources */,
-				178B4957132E5C9D00C2661F /* ReadMangaViewController.xib in Resources */,
 				174CC774132FED60002B4589 /* Icon@2x.png in Resources */,
 				174CC776132FED6A002B4589 /* Icon.png in Resources */,
+				173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +379,6 @@
 				17148E41132044BA00552034 /* MangaAppDelegate.m in Sources */,
 				17148E47132044BA00552034 /* RootViewController.m in Sources */,
 				1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */,
-				178B4956132E5C9D00C2661F /* ReadMangaViewController.m in Sources */,
 				178B495B132E626200C2661F /* MangaDetailView.m in Sources */,
 				17A800B8132EA22400AEB472 /* ioapi.c in Sources */,
 				17A800B9132EA22400AEB472 /* mztools.c in Sources */,
@@ -402,6 +401,7 @@
 				17A800CA132EA22400AEB472 /* trees.c in Sources */,
 				17A800CB132EA22400AEB472 /* uncompr.c in Sources */,
 				17A800CC132EA22400AEB472 /* zutil.c in Sources */,
+				173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
