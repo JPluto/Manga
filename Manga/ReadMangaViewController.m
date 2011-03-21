@@ -92,19 +92,41 @@
     [[self navigationController] setTitle:mangaName];
     [titleLabel setText:[[mangaName lastPathComponent] stringByDeletingPathExtension]];
     
-    mainDetailView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    mainDetailView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
-    mainDetailView.layer.shadowOpacity = 1.0;
-    mainDetailView.layer.shadowRadius = 10;
+//    ReadMeView.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    ReadMeView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    ReadMeView.layer.shadowOpacity = 0.5;
+//    ReadMeView.layer.shadowRadius = 10;
     
-    ReadMeView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    ReadMeView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
-    ReadMeView.layer.shadowOpacity = 1.0;
-    ReadMeView.layer.shadowRadius = 10;
+    readMePanelActive = YES;
+    [self showReadMe];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    
+    if (readMePanelActive == YES) {
+        [self dismissReadMePanel];
+    }
+    
+}
 
 - (NSString*)scanMangaDirForReadMe:(NSString*)mangaDir {
+    
+    NSFileManager * filemanager = [NSFileManager defaultManager];
+    
+    NSString *file;
+    // Get all of the files in the source directory, loop thru them.
+    NSEnumerator *files = [filemanager enumeratorAtPath:mangaDir];
+    while((file = [files nextObject]) ) {
+        if( [[file pathExtension] isEqualToString:@"txt"] )
+        {
+            NSString * textfiledir = [mangaDir stringByAppendingPathComponent:file];
+            NSData * data = [filemanager contentsAtPath:textfiledir];
+            NSString * textfile = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
+            return textfile;
+        }
+        //NSLog(@"%@", file);
+    }
+        
     
     return @"File contains no additional information.";
 }

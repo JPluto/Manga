@@ -24,6 +24,7 @@
 		174CC776132FED6A002B4589 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC775132FED6A002B4589 /* Icon.png */; };
 		178B495B132E626200C2661F /* MangaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B495A132E626200C2661F /* MangaDetailView.m */; };
 		178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178B4962132E63F100C2661F /* QuartzCore.framework */; };
+		17A5231B1337A2ED00F881FB /* ReadMeDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A5231A1337A2ED00F881FB /* ReadMeDetailView.m */; };
 		17A800B8132EA22400AEB472 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A8008E132EA22300AEB472 /* ioapi.c */; };
 		17A800B9132EA22400AEB472 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A80090132EA22300AEB472 /* mztools.c */; };
 		17A800BA132EA22400AEB472 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A80092132EA22300AEB472 /* unzip.c */; };
@@ -45,7 +46,6 @@
 		17A800CA132EA22400AEB472 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B1132EA22400AEB472 /* trees.c */; };
 		17A800CB132EA22400AEB472 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B3132EA22400AEB472 /* uncompr.c */; };
 		17A800CC132EA22400AEB472 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B6132EA22400AEB472 /* zutil.c */; };
-		17C02FBF13311ED3007C0F52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C02FBE13311ED3007C0F52 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +74,8 @@
 		178B4959132E626200C2661F /* MangaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaDetailView.h; sourceTree = "<group>"; };
 		178B495A132E626200C2661F /* MangaDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaDetailView.m; sourceTree = "<group>"; };
 		178B4962132E63F100C2661F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17A523191337A2ED00F881FB /* ReadMeDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadMeDetailView.h; path = Manga.xcodeproj/ReadMeDetailView.h; sourceTree = SOURCE_ROOT; };
+		17A5231A1337A2ED00F881FB /* ReadMeDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadMeDetailView.m; path = Manga.xcodeproj/ReadMeDetailView.m; sourceTree = SOURCE_ROOT; };
 		17A8008D132EA22300AEB472 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		17A8008E132EA22300AEB472 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		17A8008F132EA22300AEB472 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -115,7 +117,6 @@
 		17A800B5132EA22400AEB472 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		17A800B6132EA22400AEB472 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		17A800B7132EA22400AEB472 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
-		17C02FBE13311ED3007C0F52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C02FBF13311ED3007C0F52 /* MapKit.framework in Frameworks */,
 				178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */,
 				17148E31132044BA00552034 /* UIKit.framework in Frameworks */,
 				17148E33132044BA00552034 /* Foundation.framework in Frameworks */,
@@ -154,7 +154,6 @@
 		17148E2F132044BA00552034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				17C02FBE13311ED3007C0F52 /* MapKit.framework */,
 				178B4962132E63F100C2661F /* QuartzCore.framework */,
 				17148E30132044BA00552034 /* UIKit.framework */,
 				17148E32132044BA00552034 /* Foundation.framework */,
@@ -233,6 +232,8 @@
 		178B4958132E624300C2661F /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				17A523191337A2ED00F881FB /* ReadMeDetailView.h */,
+				17A5231A1337A2ED00F881FB /* ReadMeDetailView.m */,
 				178B4959132E626200C2661F /* MangaDetailView.h */,
 				178B495A132E626200C2661F /* MangaDetailView.m */,
 			);
@@ -402,6 +403,7 @@
 				17A800CB132EA22400AEB472 /* uncompr.c in Sources */,
 				17A800CC132EA22400AEB472 /* zutil.c in Sources */,
 				173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */,
+				17A5231B1337A2ED00F881FB /* ReadMeDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

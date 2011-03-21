@@ -1,16 +1,15 @@
 //
-//  MangaDetailView.m
+//  ReadMeDetailView.m
 //  Manga
 //
-//  Created by Hidde Jansen on 14-03-11.
+//  Created by Hidde Jansen on 21-03-11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "ReadMeDetailView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "MangaDetailView.h"
 
-
-@implementation MangaDetailView
+@implementation ReadMeDetailView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -26,11 +25,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    //Set shadow
-    self.layer.shadowOpacity = 1.0;
-    self.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.layer.shadowRadius = 10;
-
+    // Drawing code
     //Gradient with border
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
@@ -38,7 +33,7 @@
     gradient.borderColor = [UIColor darkGrayColor].CGColor;
     gradient.borderWidth = 1.0f;
     [self.layer insertSublayer:gradient atIndex:0];
-    
+
 }
 
 - (void)dealloc
