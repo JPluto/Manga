@@ -46,6 +46,7 @@
 		17A800CA132EA22400AEB472 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B1132EA22400AEB472 /* trees.c */; };
 		17A800CB132EA22400AEB472 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B3132EA22400AEB472 /* uncompr.c */; };
 		17A800CC132EA22400AEB472 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B6132EA22400AEB472 /* zutil.c */; };
+		17BB9D811337AADF00AFCE5F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17BB9D801337AADF00AFCE5F /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		17A800B5132EA22400AEB472 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		17A800B6132EA22400AEB472 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		17A800B7132EA22400AEB472 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		17BB9D801337AADF00AFCE5F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		17148E21132044B900552034 = {
 			isa = PBXGroup;
 			children = (
+				17BB9D801337AADF00AFCE5F /* README.txt */,
 				17148E36132044BA00552034 /* Manga */,
 				17148E2F132044BA00552034 /* Frameworks */,
 				17148E2D132044BA00552034 /* Products */,
@@ -366,6 +369,7 @@
 				174CC774132FED60002B4589 /* Icon@2x.png in Resources */,
 				174CC776132FED6A002B4589 /* Icon.png in Resources */,
 				173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */,
+				17BB9D811337AADF00AFCE5F /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
