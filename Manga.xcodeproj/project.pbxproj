@@ -47,6 +47,10 @@
 		17A800CB132EA22400AEB472 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B3132EA22400AEB472 /* uncompr.c */; };
 		17A800CC132EA22400AEB472 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B6132EA22400AEB472 /* zutil.c */; };
 		17BB9D811337AADF00AFCE5F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17BB9D801337AADF00AFCE5F /* README.txt */; };
+		17BB9D9E1337C1B600AFCE5F /* MangaInfoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BB9D9C1337C1B600AFCE5F /* MangaInfoScrollViewController.m */; };
+		17BB9D9F1337C1B600AFCE5F /* MangaInfoScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BB9D9D1337C1B600AFCE5F /* MangaInfoScrollViewController.xib */; };
+		17BB9DA41337E50F00AFCE5F /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BB9DA21337E50F00AFCE5F /* PreviewViewController.m */; };
+		17BB9DA51337E50F00AFCE5F /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BB9DA31337E50F00AFCE5F /* PreviewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +123,12 @@
 		17A800B6132EA22400AEB472 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		17A800B7132EA22400AEB472 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
 		17BB9D801337AADF00AFCE5F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		17BB9D9B1337C1B600AFCE5F /* MangaInfoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaInfoScrollViewController.h; sourceTree = "<group>"; };
+		17BB9D9C1337C1B600AFCE5F /* MangaInfoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaInfoScrollViewController.m; sourceTree = "<group>"; };
+		17BB9D9D1337C1B600AFCE5F /* MangaInfoScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MangaInfoScrollViewController.xib; sourceTree = "<group>"; };
+		17BB9DA11337E50F00AFCE5F /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
+		17BB9DA21337E50F00AFCE5F /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
+		17BB9DA31337E50F00AFCE5F /* PreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +236,8 @@
 		174CC78E133004CB002B4589 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				17BB9DA01337E4DA00AFCE5F /* PreviewViewController */,
+				17BB9D9A1337C17C00AFCE5F /* MangaInfoViewController */,
 				174CC78D133004B7002B4589 /* RootViewController */,
 				174CC78C1330049E002B4589 /* ReadMangaViewController */,
 			);
@@ -315,6 +327,26 @@
 			path = ZLib;
 			sourceTree = "<group>";
 		};
+		17BB9D9A1337C17C00AFCE5F /* MangaInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				17BB9D9B1337C1B600AFCE5F /* MangaInfoScrollViewController.h */,
+				17BB9D9C1337C1B600AFCE5F /* MangaInfoScrollViewController.m */,
+				17BB9D9D1337C1B600AFCE5F /* MangaInfoScrollViewController.xib */,
+			);
+			name = MangaInfoViewController;
+			sourceTree = "<group>";
+		};
+		17BB9DA01337E4DA00AFCE5F /* PreviewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				17BB9DA11337E50F00AFCE5F /* PreviewViewController.h */,
+				17BB9DA21337E50F00AFCE5F /* PreviewViewController.m */,
+				17BB9DA31337E50F00AFCE5F /* PreviewViewController.xib */,
+			);
+			name = PreviewViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +402,8 @@
 				174CC776132FED6A002B4589 /* Icon.png in Resources */,
 				173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */,
 				17BB9D811337AADF00AFCE5F /* README.txt in Resources */,
+				17BB9D9F1337C1B600AFCE5F /* MangaInfoScrollViewController.xib in Resources */,
+				17BB9DA51337E50F00AFCE5F /* PreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +442,8 @@
 				17A800CC132EA22400AEB472 /* zutil.c in Sources */,
 				173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */,
 				17A5231B1337A2ED00F881FB /* ReadMeDetailView.m in Sources */,
+				17BB9D9E1337C1B600AFCE5F /* MangaInfoScrollViewController.m in Sources */,
+				17BB9DA41337E50F00AFCE5F /* PreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

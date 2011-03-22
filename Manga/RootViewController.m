@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "ReadMangaViewController.h"
+#import "MangaInfoScrollViewController.h"
 
 @implementation RootViewController
 
@@ -117,7 +118,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * mangaName = [comicArray objectAtIndex:[indexPath row]];
-    ReadMangaViewController *detailViewController = [[ReadMangaViewController alloc] init];
+    MangaInfoScrollViewController *detailViewController = [[MangaInfoScrollViewController alloc] init];
     [detailViewController setMangaName:mangaName];
     // ...
     // Pass the selected object to the new view controller.
