@@ -236,10 +236,8 @@
 		174CC78E133004CB002B4589 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				17BB9DA01337E4DA00AFCE5F /* PreviewViewController */,
-				17BB9D9A1337C17C00AFCE5F /* MangaInfoViewController */,
 				174CC78D133004B7002B4589 /* RootViewController */,
-				174CC78C1330049E002B4589 /* ReadMangaViewController */,
+				17D65E3A133AAEED0084CFD4 /* MangaDetails */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -345,6 +343,16 @@
 				17BB9DA31337E50F00AFCE5F /* PreviewViewController.xib */,
 			);
 			name = PreviewViewController;
+			sourceTree = "<group>";
+		};
+		17D65E3A133AAEED0084CFD4 /* MangaDetails */ = {
+			isa = PBXGroup;
+			children = (
+				17BB9DA01337E4DA00AFCE5F /* PreviewViewController */,
+				174CC78C1330049E002B4589 /* ReadMangaViewController */,
+				17BB9D9A1337C17C00AFCE5F /* MangaInfoViewController */,
+			);
+			name = MangaDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

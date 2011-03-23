@@ -3,7 +3,7 @@
 //  Manga
 //
 //  Created by Hidde Jansen on 21-03-11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Epic-Win. All rights reserved.
 //
 
 #import "MangaInfoScrollViewController.h"
@@ -38,18 +38,20 @@
 #pragma mark - View lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
+    //Retrieve zip path
     NSArray *documentsPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [documentsPaths objectAtIndex:0];
     NSString * zipFilePath = [documentsDirectory stringByAppendingPathComponent:mangaName];
     
+    //Retrieve cache path
     NSArray * cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString * cacheDirectory = [cachePaths objectAtIndex:0];
     NSString * mangaDirectory = [cacheDirectory stringByAppendingPathComponent:[mangaName stringByDeletingPathExtension]];
     
     NSFileManager * filemanager = [NSFileManager defaultManager];
-    
-    //Manga cache directory does not exist: proceed by creating and extracting
     BOOL isDir;
+	
+    //Manga cache directory does not exist: proceed by creating and extracting
     if(![filemanager fileExistsAtPath:mangaDirectory isDirectory:&isDir] || !isDir)
     {
         zipThread= [[NSThread alloc] initWithTarget:detailViewController selector:@selector(extractImagesFromZip:) object:zipFilePath];
@@ -57,11 +59,11 @@
     }
     else
     {
-        [detailViewController.readMeDetailView setText:[detailViewController scanMangaDirForReadMe:mangaDirectory]];
+        [detailViewController.readMeDetailView setText:[FileUtils scanMangaDirForReadMe:mangaDirectory]];
         [detailViewController.loadingLabel setText:@"Manga loaded"];
         [detailViewController.ReadMangaButton setEnabled:YES];
         [detailViewController.zipProgressView setHidden:YES];
-        [detailViewController scanMangaDirForPreviewPic: mangaDirectory];
+        [detailViewController.previewPic setImage: [FileUtils scanMangaDirForPreviewPic: mangaDirectory]];
     }
 }
 

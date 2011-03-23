@@ -3,26 +3,16 @@
 //  Manga
 //
 //  Created by Hidde Jansen on 14-03-11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Epic-Win. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h> 
-
 #import "ReadMangaViewController.h"
-#import "PreviewViewController.h"
-
-#import "ZipFile.h"
-#import "ZipException.h"
-#import "FileInZipInfo.h"
-#import "ZipWriteStream.h"
-#import "ZipReadStream.h"
 
 
 @interface ReadMangaViewController (PrivateMethods)
 - (void)loadScrollViewWithPage:(int)page;
 - (void)scrollViewDidScroll:(UIScrollView *)sender;
-
-+ (UIImage*)imageWithImage:(UIImage*)image ;
 @end
 
 @implementation ReadMangaViewController
@@ -38,37 +28,11 @@
 @synthesize screenshotPreviewPageControl;
 @synthesize viewControllers;
 
-+ (UIImage*)imageWithImage:(UIImage*)image;
-{
-    float actualHeight = image.size.height;
-    float actualWidth = image.size.width;
-    float imgRatio = actualWidth/actualHeight;
-    float maxRatio = 217/254.0;
-    
-    if(imgRatio!=maxRatio){
-        if(imgRatio < maxRatio){
-            imgRatio = 254.0 / actualHeight;
-            actualWidth = imgRatio * actualWidth;
-            actualHeight = 254.0;
-        }
-        else{
-            imgRatio = 217.0 / actualWidth;
-            actualHeight = imgRatio * actualHeight;
-            actualWidth = 217.0;
-        }
-    }
-    UIGraphicsBeginImageContext( CGSizeMake(actualWidth, actualHeight) );
-    [image drawInRect:CGRectMake(0,0,actualWidth,actualHeight)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        //Set the default number of pages
         kNumberOfPages = 3;
     }
     return self;
@@ -96,20 +60,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    //Set the manga name in the view
     [[self navigationController] setTitle:mangaName];
     [titleLabel setText:[[mangaName lastPathComponent] stringByDeletingPathExtension]];
     
-//    ReadMeView.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    ReadMeView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    //Add shadow
     ReadMeView.layer.shadowOpacity = 0.5;
-//    ReadMeView.layer.shadowRadius = 10;
     
-    readMePanelActive = YES;
+    //Animate the Readme Panel
     [self showReadMe];
-
-    // view controllers are created lazily
-    // in the meantime, load the array with placeholders which will be replaced on demand
+    readMePanelActive = YES;
+    
+    //Load the viewcontroller array with placeholders
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
     for (unsigned i = 0; i < kNumberOfPages; i++)
     {
@@ -118,7 +81,7 @@
     self.viewControllers = controllers;
     [controllers release];
     
-    // a page is the width of the scroll view
+    //Configure the scrollview
     screenshotPreviewScrollView.pagingEnabled = YES;
     screenshotPreviewScrollView.contentSize = CGSizeMake(screenshotPreviewScrollView.frame.size.width * kNumberOfPages, screenshotPreviewScrollView.frame.size.height);
     screenshotPreviewScrollView.showsHorizontalScrollIndicator = NO;
@@ -126,81 +89,21 @@
     screenshotPreviewScrollView.scrollsToTop = NO;
     screenshotPreviewScrollView.delegate = self;
     
+    //Configure the page control
     screenshotPreviewPageControl.numberOfPages = kNumberOfPages;
     screenshotPreviewPageControl.currentPage = 0;
     
-    // pages are created on demand
-    // load the visible page
-    // load the page on either side to avoid flashes when the user starts scrolling
-    //
+    //Load the first two pages
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
     
+    //Scroll to the preview
     CGRect frame = screenshotPreviewScrollView.frame;
     frame.origin.x = frame.size.width;
     frame.origin.y = 0;
     [screenshotPreviewScrollView scrollRectToVisible:frame animated:YES];
 }
 
-- (NSString*)scanMangaDirForReadMe:(NSString*)mangaDir {
-    
-    NSFileManager * filemanager = [NSFileManager defaultManager];
-    
-    NSString *file;
-    // Get all of the files in the source directory, loop thru them.
-    NSEnumerator *files = [filemanager enumeratorAtPath:mangaDir];
-    while((file = [files nextObject]) ) {
-        if( [[file pathExtension] isEqualToString:@"txt"] )
-        {
-            NSString * textfiledir = [mangaDir stringByAppendingPathComponent:file];
-            NSData * data = [filemanager contentsAtPath:textfiledir];
-            NSString * textfile = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
-            return textfile;
-        }
-        //NSLog(@"%@", file);
-    }
-        
-    return @"File contains no additional information.";
-}
-
-- (void)scanMangaDirForPreviewPic:(NSString*)mangaDir {
-    
-    NSFileManager * filemanager = [NSFileManager defaultManager];
-    
-    NSString *file;
-    mangaDir = [mangaDir stringByAppendingPathComponent:@"previews"];
-    // Get all of the files in the source directory, loop thru them.
-    NSEnumerator *files = [filemanager enumeratorAtPath:mangaDir];
-    while((file = [files nextObject]) ) {
-        if( [[file pathExtension] isEqualToString:@"jpg"] )
-        {
-            NSString * previewPicDir = [mangaDir stringByAppendingPathComponent:file];
-            [previewPic setImage: [UIImage imageWithContentsOfFile:previewPicDir]];
-            break;
-        }
-        //NSLog(@"%@", file);
-    }
-}
-
-/*
-- (void)scanZipForTextFile:(NSString*)zipName{
-    NSAutoreleasePool *pool= [[NSAutoreleasePool alloc] init];
-    
-    ZipFile *unzipFile= [[ZipFile alloc] initWithFileName:zipName mode:ZipFileModeUnzip];
-    NSArray *infos= [unzipFile listFileInZipInfos];
-    for (FileInZipInfo *info in infos) {
-        //NSLog(@"- %@ %@ %d (%d)", info.name, info.date, info.size, info.level);
-        
-        // Locate the file in the zip
-        [unzipFile locateFileInZip:info.name];
-        
-    }
-    [unzipFile close];
-    [unzipFile release];
-    
-	[pool drain];
-}
-*/
 - (void)extractImagesFromZip:(NSString*)zipName {
     NSAutoreleasePool *pool= [[NSAutoreleasePool alloc] init];
     
@@ -243,7 +146,7 @@
                 
                 if([targetPathComponents count] >= 1)
                 {
-                    [self createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
+                    [FileUtils createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
                 }
                 
                 // Expand the file in memory
@@ -254,45 +157,45 @@
                 
                 NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:info.name];
                 
-                [self createFileWithData:data atPath:theTargetDir];
+                [FileUtils createFileWithData:data atPath:theTargetDir];
                 
                 if(count == 0)
                 {
                     if([[info.name pathExtension] isEqualToString:@"jpg"])
                     {
-                        NSData *filedata = UIImageJPEGRepresentation([ReadMangaViewController imageWithImage:[UIImage imageWithData:data]], 0.9);
-                        [self createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
+                        NSData *filedata = UIImageJPEGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]], 0.9);
+                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                     else if([[info.name pathExtension] isEqualToString:@"png"])
                     {
-                        NSData *filedata = UIImagePNGRepresentation([ReadMangaViewController imageWithImage:[UIImage imageWithData:data]]);
-                        [self createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
+                        NSData *filedata = UIImagePNGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]]);
+                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                 }
                 else if (count == 1)
                 {
                     if([[info.name pathExtension] isEqualToString:@"jpg"])
                     {
-                        NSData *filedata = UIImageJPEGRepresentation([ReadMangaViewController imageWithImage:[UIImage imageWithData:data]], 0.9);
-                        [self createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
+                        NSData *filedata = UIImageJPEGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]], 0.9);
+                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                     else if([[info.name pathExtension] isEqualToString:@"png"])
                     {
-                        NSData *filedata = UIImagePNGRepresentation([ReadMangaViewController imageWithImage:[UIImage imageWithData:data]]);
-                        [self createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
+                        NSData *filedata = UIImagePNGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]]);
+                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                 }
                 else if (count == 2)
                 {
                     if([[info.name pathExtension] isEqualToString:@"jpg"])
                     {
-                        NSData *filedata = UIImageJPEGRepresentation([ReadMangaViewController imageWithImage:[UIImage imageWithData:data]], 0.9);
-                        [self createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
+                        NSData *filedata = UIImageJPEGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]], 0.9);
+                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                     else if([[info.name pathExtension] isEqualToString:@"png"])
                     {
-                        NSData *filedata = UIImagePNGRepresentation([ReadMangaViewController imageWithImage:[UIImage imageWithData:data]]);
-                        [self createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
+                        NSData *filedata = UIImagePNGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]]);
+                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                 }
                 
@@ -315,7 +218,7 @@
                 
                 if([targetPathComponents count] >= 1)
                 {
-                    [self createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
+                    [FileUtils createDirWithTargetPathComponents:targetPathComponents withMangaDir:mangaDirectory];
                 }
                 
                 // Expand the file in memory
@@ -330,7 +233,7 @@
                 
                 //Save the file
                 NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:info.name];
-                [self createFileWithData:data atPath:theTargetDir];
+                [FileUtils createFileWithData:data atPath:theTargetDir];
 
                 targetPathComponents = nil;
             }
@@ -345,7 +248,7 @@
     [loadingLabel setText:@"Manga loaded"];
     [ReadMangaButton setEnabled:YES];
     [zipProgressView setHidden:YES];
-    [self scanMangaDirForPreviewPic: mangaDirectory];
+    [previewPic setImage:[FileUtils scanMangaDirForPreviewPic:mangaDirectory]];
     
     int page = screenshotPreviewPageControl.currentPage;
 	
@@ -356,34 +259,38 @@
     
 	[pool drain];
 }
-- (void)createFileWithData:(NSData*)data atPath:(NSString*)filePath {
-    NSFileManager * filemanager = [NSFileManager defaultManager];
 
-    if(![filemanager fileExistsAtPath:filePath])
-    {
-        [filemanager createFileAtPath:filePath contents:data attributes: nil];
-    }
-    
-}
--(void)createDirWithTargetPathComponents:(NSArray*)targetPathComponents withMangaDir:(NSString*)mangaDir{
-    
-    NSFileManager * filemanager = [NSFileManager defaultManager];
-    NSString * filePath = mangaDir;
-    
-    for (NSString * component in targetPathComponents)
-    {
-        filePath = [filePath stringByAppendingPathComponent:component];
-       
-        //Dir does not exist: create it
-        BOOL isDir = NO;
-        if(![filemanager fileExistsAtPath:filePath isDirectory:&isDir] && !isDir)
-        {
-            [filemanager createDirectoryAtPath:filePath withIntermediateDirectories:NO attributes:nil error:NULL];
-        }
-    }
-    
+-(void)loadingProgress:(NSNumber *)nProgress{
+    float progress = [nProgress floatValue];
+    NSLog(@"Progress %f", progress);
+    zipProgressView.progress = progress;
 }
 
+- (void)viewDidUnload
+{
+    [titleLabel release];
+    [OptionView release];
+    [ReadMeView release];
+    [readMeDetailView release];
+    [mainDetailView release];
+    [zipProgressView release];
+    [loadingLabel release];
+    [ReadMangaButton release];
+    [previewPic release];
+    [screenshotPreviewPageControl release];
+    [screenshotPreviewScrollView release];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark Readme panel
 - (IBAction)toggleReadMe {
     if (readMePanelActive == YES)
     {
@@ -427,36 +334,6 @@
     [UIView commitAnimations];
 }
 
--(void)loadingProgress:(NSNumber *)nProgress{
-    float progress = [nProgress floatValue];
-    NSLog(@"Progress %f", progress);
-    zipProgressView.progress = progress;
-}
-
-- (void)viewDidUnload
-{
-    [titleLabel release];
-    [OptionView release];
-    [ReadMeView release];
-    [readMeDetailView release];
-    [mainDetailView release];
-    [zipProgressView release];
-    [loadingLabel release];
-    [ReadMangaButton release];
-    [previewPic release];
-    [screenshotPreviewPageControl release];
-    [screenshotPreviewScrollView release];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark Preview Scroll methods
 - (void)loadScrollViewWithPage:(int)page
 {
@@ -496,23 +373,19 @@
             {
                 previewPicDir = [mangaDirectory stringByAppendingPathComponent:file];
                 [controller.previewImage setImage: [UIImage imageWithContentsOfFile:previewPicDir]];
-                NSLog(@"Page 1: %@", previewPicDir);
             }
             if( page == 1 && count == 1)
             {
                 previewPicDir = [mangaDirectory stringByAppendingPathComponent:file];
                 [controller.previewImage setImage: [UIImage imageWithContentsOfFile:previewPicDir]];
-                NSLog(@"Page 2: %@", previewPicDir);
             }
             if( page == 2 && count == 2)
             {
                 previewPicDir = [mangaDirectory stringByAppendingPathComponent:file];
                 [controller.previewImage setImage: [UIImage imageWithContentsOfFile:previewPicDir]];
-                NSLog(@"Page 3: %@", previewPicDir);
             }
             count++;
         }
-        //NSLog(@"%@", file);
     }
     
     // add the controller's view to the scroll view

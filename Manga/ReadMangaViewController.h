@@ -3,11 +3,21 @@
 //  Manga
 //
 //  Created by Hidde Jansen on 14-03-11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Epic-Win. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+
 #import "MangaDetailView.h"
+#import "PreviewViewController.h"
+
+#import "FileUtils.h"
+
+#import "ZipFile.h"
+#import "ZipException.h"
+#import "FileInZipInfo.h"
+#import "ZipWriteStream.h"
+#import "ZipReadStream.h"
 
 @interface ReadMangaViewController : UIViewController <UIScrollViewDelegate> {
     NSThread * readmeThread;
@@ -29,13 +39,10 @@
     IBOutlet UIPageControl *screenshotPreviewPageControl;
     IBOutlet UIScrollView *screenshotPreviewScrollView;
     NSMutableArray *viewControllers;
+    BOOL pageControlUsed;
+    int kNumberOfPages;
     
     NSMutableArray * filearray;
-    
-    // To be used when scrolls originate from the UIPageControl
-    BOOL pageControlUsed;
-    
-    int kNumberOfPages;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
@@ -45,18 +52,17 @@
 @property (nonatomic, retain) IBOutlet UIProgressView *zipProgressView;
 @property (nonatomic) BOOL readMePanelActive;
 
+@property (nonatomic, retain) IBOutlet UIImageView *previewPic;
 
 @property (nonatomic, retain) IBOutlet UIPageControl *screenshotPreviewPageControl;
 @property (nonatomic, retain) IBOutlet UIScrollView *screenshotPreviewScrollView;
 @property (nonatomic, retain) NSMutableArray *viewControllers;
 
 - (void)setMangaName:(NSString*)newName;
-//- (void)scanZipForTextFile:(NSString*)zipName;
-- (NSString*)scanMangaDirForReadMe:(NSString*)mangaDir;
-- (void)scanMangaDirForPreviewPic:(NSString*)mangaDir;
+
 - (void)extractImagesFromZip:(NSString*)zipName;
-- (void)createFileWithData:(NSData*)data atPath:(NSString*)filePath;
-- (void)createDirWithTargetPathComponents:(NSArray*)targetPathComponents withMangaDir:(NSString*)mangaDir;
+
+- (IBAction)toggleReadMe;
 - (IBAction)showReadMe;
 - (IBAction)dismissReadMePanel;
 
