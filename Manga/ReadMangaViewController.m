@@ -17,6 +17,8 @@
 
 @implementation ReadMangaViewController
 
+@synthesize mangaName;
+
 @synthesize loadingLabel;
 @synthesize titleLabel;
 @synthesize ReadMangaButton;
