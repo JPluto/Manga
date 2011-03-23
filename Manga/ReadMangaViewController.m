@@ -23,6 +23,7 @@
 @synthesize readMeDetailView;
 @synthesize zipProgressView;
 @synthesize readMePanelActive;
+@synthesize previewPic;
 
 @synthesize screenshotPreviewScrollView;
 @synthesize screenshotPreviewPageControl;
