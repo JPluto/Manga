@@ -13,16 +13,11 @@
 
 #import "FileUtils.h"
 
-#import "ZipFile.h"
-#import "ZipException.h"
-#import "FileInZipInfo.h"
-#import "ZipWriteStream.h"
-#import "ZipReadStream.h"
-
 @interface ReadMangaViewController : UIViewController <UIScrollViewDelegate> {
     NSThread * readmeThread;
 
     NSString * mangaName;
+    NSString * zipPath;
 	
 	//Info panel
     IBOutlet UIImageView *previewPic;
@@ -51,6 +46,7 @@
 
 //Properties
 @property (nonatomic, retain) NSString * mangaName;
+@property (nonatomic, retain) NSString * zipPath;
 
 //Info panel
 @property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
@@ -62,14 +58,12 @@
 //Readme panel
 @property (nonatomic, retain) IBOutlet UITextView *readMeDetailView;
 @property (nonatomic) BOOL readMePanelActive;
+@property (nonatomic, retain) NSString * readmeString;
 
 //Screenshot previews
 @property (nonatomic, retain) IBOutlet UIPageControl *screenshotPreviewPageControl;
 @property (nonatomic, retain) IBOutlet UIScrollView *screenshotPreviewScrollView;
 @property (nonatomic, retain) NSMutableArray *viewControllers;
-
-//TODO: move this to FileUtils
-- (void)extractImagesFromZip:(NSString*)zipName;
 
 //Info panel
 -(void)loadingProgress:(NSNumber *)nProgress;
@@ -81,5 +75,7 @@
 
 //Screenshot page control action
 - (IBAction)changePage:(id)sender;
+- (void)loadScrollViewWithPage:(int)page;
+- (void)scrollViewDidScroll:(UIScrollView *)sender;
 
 @end

@@ -16,6 +16,8 @@
 		17148E44132044BA00552034 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E42132044BA00552034 /* MainWindow.xib */; };
 		17148E47132044BA00552034 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17148E46132044BA00552034 /* RootViewController.m */; };
 		17148E4A132044BA00552034 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E48132044BA00552034 /* RootViewController.xib */; };
+		172C165413423A7D00495BDD /* MangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172C165213423A7D00495BDD /* MangaViewController.m */; };
+		172C165513423A7D00495BDD /* MangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172C165313423A7D00495BDD /* MangaViewController.xib */; };
 		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
 		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
 		173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173F23971332ABA2003647F0 /* ReadMangaViewController.m */; };
@@ -68,6 +70,9 @@
 		17148E45132044BA00552034 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		17148E46132044BA00552034 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		17148E49132044BA00552034 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		172C165113423A7D00495BDD /* MangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaViewController.h; sourceTree = "<group>"; };
+		172C165213423A7D00495BDD /* MangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaViewController.m; sourceTree = "<group>"; };
+		172C165313423A7D00495BDD /* MangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MangaViewController.xib; sourceTree = "<group>"; };
 		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
@@ -203,6 +208,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		172C165713423A8700495BDD /* MangaViewController */ = {
+			isa = PBXGroup;
+			children = (
+				172C165113423A7D00495BDD /* MangaViewController.h */,
+				172C165213423A7D00495BDD /* MangaViewController.m */,
+				172C165313423A7D00495BDD /* MangaViewController.xib */,
+			);
+			name = MangaViewController;
+			sourceTree = "<group>";
+		};
 		174CC778132FED88002B4589 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +253,7 @@
 			children = (
 				174CC78D133004B7002B4589 /* RootViewController */,
 				17D65E3A133AAEED0084CFD4 /* MangaDetails */,
+				172C165713423A8700495BDD /* MangaViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -412,6 +428,7 @@
 				17BB9D811337AADF00AFCE5F /* README.txt in Resources */,
 				17BB9D9F1337C1B600AFCE5F /* MangaInfoScrollViewController.xib in Resources */,
 				17BB9DA51337E50F00AFCE5F /* PreviewViewController.xib in Resources */,
+				172C165513423A7D00495BDD /* MangaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +469,7 @@
 				17A5231B1337A2ED00F881FB /* ReadMeDetailView.m in Sources */,
 				17BB9D9E1337C1B600AFCE5F /* MangaInfoScrollViewController.m in Sources */,
 				17BB9DA41337E50F00AFCE5F /* PreviewViewController.m in Sources */,
+				172C165413423A7D00495BDD /* MangaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

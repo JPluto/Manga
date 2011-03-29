@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ReadMangaViewController.h"
+
+#import "ZipFile.h"
+#import "ZipException.h"
+#import "FileInZipInfo.h"
+#import "ZipWriteStream.h"
+#import "ZipReadStream.h"
+
+@class ReadMangaViewController;
 
 @interface FileUtils : NSObject {
     
@@ -23,4 +32,5 @@
 + (void)createFileWithData:(NSData*)data atPath:(NSString*)filePath;
 + (void)createDirWithTargetPathComponents:(NSArray*)targetPathComponents withMangaDir:(NSString*)mangaDir;
 
++ (void)extractFilesFromZip:(ReadMangaViewController*)sender;
 @end

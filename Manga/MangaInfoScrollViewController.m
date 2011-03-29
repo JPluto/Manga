@@ -7,7 +7,7 @@
 //
 
 #import "MangaInfoScrollViewController.h"
-
+#import "FileUtils.h"
 @implementation MangaInfoScrollViewController
 
 @synthesize mangaName;
@@ -43,6 +43,8 @@
     NSString *documentsDirectory = [documentsPaths objectAtIndex:0];
     NSString * zipFilePath = [documentsDirectory stringByAppendingPathComponent:mangaName];
     
+	detailViewController.zipPath = zipFilePath;
+	
     //Retrieve cache path
     NSArray * cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString * cacheDirectory = [cachePaths objectAtIndex:0];
@@ -54,7 +56,7 @@
     //Manga cache directory does not exist: proceed by creating and extracting
     if(![filemanager fileExistsAtPath:mangaDirectory isDirectory:&isDir] || !isDir)
     {
-        zipThread= [[NSThread alloc] initWithTarget:detailViewController selector:@selector(extractImagesFromZip:) object:zipFilePath];
+        zipThread= [[NSThread alloc] initWithTarget:[FileUtils class] selector:@selector(extractFilesFromZip:) object:detailViewController];
         [zipThread start];
     }
     else
