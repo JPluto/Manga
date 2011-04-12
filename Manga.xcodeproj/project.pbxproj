@@ -18,6 +18,8 @@
 		17148E4A132044BA00552034 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17148E48132044BA00552034 /* RootViewController.xib */; };
 		172C165413423A7D00495BDD /* MangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172C165213423A7D00495BDD /* MangaViewController.m */; };
 		172C165513423A7D00495BDD /* MangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172C165313423A7D00495BDD /* MangaViewController.xib */; };
+		172F36FB1354CF2800125CFB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 172F36FA1354CF2800125CFB /* Default@2x.png */; };
+		172F36FE1354CF5800125CFB /* imageloading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 172F36FD1354CF5800125CFB /* imageloading@2x.png */; };
 		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
 		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
 		173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173F23971332ABA2003647F0 /* ReadMangaViewController.m */; };
@@ -73,6 +75,8 @@
 		172C165113423A7D00495BDD /* MangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaViewController.h; sourceTree = "<group>"; };
 		172C165213423A7D00495BDD /* MangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaViewController.m; sourceTree = "<group>"; };
 		172C165313423A7D00495BDD /* MangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MangaViewController.xib; sourceTree = "<group>"; };
+		172F36FA1354CF2800125CFB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		172F36FD1354CF5800125CFB /* imageloading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imageloading@2x.png"; path = "../imageloading@2x.png"; sourceTree = "<group>"; };
 		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
@@ -218,11 +222,21 @@
 			name = MangaViewController;
 			sourceTree = "<group>";
 		};
-		174CC778132FED88002B4589 /* Images */ = {
+		172F36FF1354CFD300125CFB /* Icon */ = {
 			isa = PBXGroup;
 			children = (
 				174CC775132FED6A002B4589 /* Icon.png */,
 				174CC773132FED60002B4589 /* Icon@2x.png */,
+			);
+			name = Icon;
+			sourceTree = "<group>";
+		};
+		174CC778132FED88002B4589 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				172F36FF1354CFD300125CFB /* Icon */,
+				172F36FA1354CF2800125CFB /* Default@2x.png */,
+				172F36FD1354CF5800125CFB /* imageloading@2x.png */,
 				1730D5F2132D839100923309 /* loading.png */,
 			);
 			name = Images;
@@ -429,6 +443,8 @@
 				17BB9D9F1337C1B600AFCE5F /* MangaInfoScrollViewController.xib in Resources */,
 				17BB9DA51337E50F00AFCE5F /* PreviewViewController.xib in Resources */,
 				172C165513423A7D00495BDD /* MangaViewController.xib in Resources */,
+				172F36FB1354CF2800125CFB /* Default@2x.png in Resources */,
+				172F36FE1354CF5800125CFB /* imageloading@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
