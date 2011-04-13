@@ -13,7 +13,7 @@
 #import "FileUtils.h"
 
 
-@interface MangaInfoScrollViewController : UIViewController {
+@interface MangaInfoScrollViewController : UIViewController<DetailViewControllerDelegate> {
     
     NSString * mangaName;
     
@@ -23,5 +23,8 @@
 }
 
 @property (nonatomic, retain) NSString * mangaName;
+
+
+- (void)DetailViewControllerReadTouched:(ReadMangaViewController *)controller;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MangaInfoScrollViewController.h"
+#import "MangaViewController.h"
 #import "FileUtils.h"
 @implementation MangaInfoScrollViewController
 
@@ -33,6 +34,11 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)DetailViewControllerReadTouched:(ReadMangaViewController *)controller{
+	MangaViewController * readView = [[[MangaViewController alloc] initWithNibName:@"MangaViewController" bundle:nil] autorelease];
+	[self.navigationController pushViewController:readView animated:YES];
 }
 
 #pragma mark - View lifecycle
@@ -86,6 +92,7 @@
     
     
     detailViewController = [[ReadMangaViewController alloc] init];
+	detailViewController.delegate = self;
     [detailViewController setMangaName:mangaName];
     [self.view addSubview: detailViewController.view];
 }

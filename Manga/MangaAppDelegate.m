@@ -21,7 +21,13 @@
     // Add the navigation controller's view to the window and display.
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
-    return YES;
+	
+	UIImageView* imageView = [[[UIImageView alloc] initWithFrame:_navigationController.navigationBar.frame] autorelease];
+	imageView.contentMode = UIViewContentModeLeft;
+	imageView.image = [UIImage imageNamed:@"headerbar.png"];
+	[_navigationController.navigationBar insertSubview:imageView atIndex:0];
+    
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -13,7 +13,11 @@
 
 #import "FileUtils.h"
 
+@protocol DetailViewControllerDelegate;
+
 @interface ReadMangaViewController : UIViewController <UIScrollViewDelegate> {
+	id <DetailViewControllerDelegate> delegate;
+	
     NSThread * readmeThread;
 
     NSString * mangaName;
@@ -44,6 +48,8 @@
     NSMutableArray * filearray;
 }
 
+@property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;
+
 //Properties
 @property (nonatomic, retain) NSString * mangaName;
 @property (nonatomic, retain) NSString * zipPath;
@@ -65,6 +71,8 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *screenshotPreviewScrollView;
 @property (nonatomic, retain) NSMutableArray *viewControllers;
 
+-(IBAction)touchReadMangaButton:(id)sender;
+
 //Info panel
 -(void)loadingProgress:(NSNumber *)nProgress;
 
@@ -79,3 +87,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)sender;
 
 @end
+
+
+@protocol DetailViewControllerDelegate
+- (void)DetailViewControllerReadTouched:(ReadMangaViewController *)controller;
+@end
+

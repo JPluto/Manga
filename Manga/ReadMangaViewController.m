@@ -11,6 +11,7 @@
 
 @implementation ReadMangaViewController
 
+@synthesize delegate;
 @synthesize mangaName;
 @synthesize zipPath;
 
@@ -52,6 +53,9 @@
 
 -(void)setMangaName:(NSString*)newName {
     mangaName = newName;
+}
+-(IBAction)touchReadMangaButton:(id)sender {
+	[self.delegate DetailViewControllerReadTouched:self];
 }
 
 #pragma mark - View lifecycle

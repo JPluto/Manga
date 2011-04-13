@@ -17,6 +17,10 @@
     [super viewDidLoad];
     
     comicArray = [FileUtils listFiles];
+	self.view.backgroundColor = [UIColor clearColor];
+	self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"appbg.png"]];
+	self.tableView.separatorColor = [UIColor clearColor];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
