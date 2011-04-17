@@ -120,7 +120,7 @@
     NSEnumerator *files = [filemanager enumeratorAtPath:mangaDir];
     while((file = [files nextObject]) ) {
         //Only looking for jpg
-        if( [[file pathExtension] isEqualToString:@"jpg"] )
+        if( [[file pathExtension] isEqualToString:@"jpg"] || [[file pathExtension] isEqualToString:@"png"] )
         {
             NSString * previewPicDir = [mangaDir stringByAppendingPathComponent:file];
             return [UIImage imageWithContentsOfFile:previewPicDir];

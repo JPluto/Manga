@@ -76,6 +76,7 @@
         [detailViewController.previewPic setImage: [FileUtils scanMangaDirForPreviewPic: mangaDirectory]];
 		self.filearray = [FileUtils scanMangaDir:mangaDirectory];
     }
+	self.navigationController.navigationBarHidden = NO;
 }
 
 -(void)viewWillDisappear:(BOOL)animated {

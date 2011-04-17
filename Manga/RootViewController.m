@@ -72,7 +72,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    [[cell textLabel] setText:[[[comicArray objectAtIndex:[indexPath row]] lastPathComponent] stringByDeletingPathExtension]];
+    [[cell textLabel] setText:[[[[comicArray objectAtIndex:[indexPath row]] lastPathComponent] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_"withString:@" "]];
     // Configure the cell.
     return cell;
 }

@@ -321,7 +321,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 	if([allTouches count] == 1)
 	{
 		//Doubletap
-		if([touch tapCount] >= 2)
+		if([touch tapCount] >= 1)
 		{
 			[self handleDoubleTapAtPoint: [touch locationInView:self]];
 			return;
