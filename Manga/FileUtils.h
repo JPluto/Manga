@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "ReadMangaViewController.h"
-
+#import <CoreGraphics/CoreGraphics.h>
 #import "ZipFile.h"
 #import "ZipException.h"
 #import "FileInZipInfo.h"
@@ -26,6 +25,7 @@
 
 + (NSMutableArray*)listFiles;
 
++ (NSMutableArray*)scanMangaDir:(NSString*)mangaDir;	
 + (NSString*)scanMangaDirForReadMe:(NSString*)mangaDir;
 + (UIImage*)scanMangaDirForPreviewPic:(NSString*)mangaDir;
 
@@ -34,3 +34,6 @@
 
 + (void)extractFilesFromZip:(ReadMangaViewController*)sender;
 @end
+
+
+CGAffineTransform aspectFit(CGRect innerRect, CGRect outerRect);

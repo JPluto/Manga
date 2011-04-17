@@ -44,8 +44,6 @@
     NSMutableArray *viewControllers;
     BOOL pageControlUsed;
     int kNumberOfPages;
-    
-    NSMutableArray * filearray;
 }
 
 @property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;
@@ -89,7 +87,10 @@
 @end
 
 
-@protocol DetailViewControllerDelegate
+@protocol DetailViewControllerDelegate 
+
+@property (nonatomic, retain) NSMutableArray * filearray;
+
 - (void)DetailViewControllerReadTouched:(ReadMangaViewController *)controller;
 @end
 

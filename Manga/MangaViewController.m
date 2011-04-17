@@ -8,8 +8,10 @@
 
 #import "MangaViewController.h"
 
-
 @implementation MangaViewController
+
+@synthesize mangaName;
+@synthesize fileArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,9 +37,26 @@
 
 #pragma mark - View lifecycle
 
+- (NSUInteger) numberOfPagesInLeavesView:(LeavesView*)leavesView {
+    return [fileArray count];
+}
+
+- (void) renderPageAtIndex:(NSUInteger)index inContext:(CGContextRef)ctx {
+	UIImage *image = [UIImage imageWithContentsOfFile:[fileArray objectAtIndex:index]];
+	CGRect imageRect = CGRectMake(0, 0, image.size.width, image.size.height);
+	CGAffineTransform transform = aspectFit(imageRect,CGContextGetClipBoundingBox(ctx));
+	CGContextConcatCTM(ctx, transform);
+	CGContextDrawImage(ctx, imageRect, [image CGImage]);
+}
+
+- (void)tapDetectingImageView:(LeavesView *)view gotDoubleTapAtPoint:(CGPoint)tapPoint {
+	[self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
     // Do any additional setup after loading the view from its nib.
 }
 

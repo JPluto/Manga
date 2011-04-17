@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeavesViewController.h"
+#import "FileUtils.h"
 
-
-@interface MangaViewController : UIViewController {
-    
+@interface MangaViewController : LeavesViewController<LeavesViewDelegate,LeavesViewDataSource> {
+    NSString * mangaName;
+	NSMutableArray * fileArray;
 }
+
+@property (nonatomic, retain) NSString * mangaName;
+@property (nonatomic, retain) NSMutableArray * fileArray;
 
 @end

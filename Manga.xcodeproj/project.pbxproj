@@ -28,6 +28,9 @@
 		173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173F23981332ABA2003647F0 /* ReadMangaViewController.xib */; };
 		174CC774132FED60002B4589 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC773132FED60002B4589 /* Icon@2x.png */; };
 		174CC776132FED6A002B4589 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC775132FED6A002B4589 /* Icon.png */; };
+		17543A68135B895300723919 /* LeavesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 17543A63135B895300723919 /* LeavesCache.m */; };
+		17543A69135B895300723919 /* LeavesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17543A65135B895300723919 /* LeavesView.m */; };
+		17543A6A135B895300723919 /* LeavesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17543A67135B895300723919 /* LeavesViewController.m */; };
 		178B495B132E626200C2661F /* MangaDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B495A132E626200C2661F /* MangaDetailView.m */; };
 		178B4963132E63F100C2661F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178B4962132E63F100C2661F /* QuartzCore.framework */; };
 		17A5231B1337A2ED00F881FB /* ReadMeDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A5231A1337A2ED00F881FB /* ReadMeDetailView.m */; };
@@ -89,6 +92,12 @@
 		173F23981332ABA2003647F0 /* ReadMangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadMangaViewController.xib; sourceTree = "<group>"; };
 		174CC773132FED60002B4589 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		174CC775132FED6A002B4589 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		17543A62135B895300723919 /* LeavesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeavesCache.h; sourceTree = "<group>"; };
+		17543A63135B895300723919 /* LeavesCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeavesCache.m; sourceTree = "<group>"; };
+		17543A64135B895300723919 /* LeavesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeavesView.h; sourceTree = "<group>"; };
+		17543A65135B895300723919 /* LeavesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeavesView.m; sourceTree = "<group>"; };
+		17543A66135B895300723919 /* LeavesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeavesViewController.h; sourceTree = "<group>"; };
+		17543A67135B895300723919 /* LeavesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeavesViewController.m; sourceTree = "<group>"; };
 		178B4959132E626200C2661F /* MangaDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaDetailView.h; sourceTree = "<group>"; };
 		178B495A132E626200C2661F /* MangaDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaDetailView.m; sourceTree = "<group>"; };
 		178B4962132E63F100C2661F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -191,6 +200,7 @@
 		17148E36132044BA00552034 /* Manga */ = {
 			isa = PBXGroup;
 			children = (
+				17543A6B135B896100723919 /* Leaves */,
 				174CC78E133004CB002B4589 /* ViewControllers */,
 				17A8008A132EA21300AEB472 /* Zip */,
 				178B4958132E624300C2661F /* SubViews */,
@@ -276,6 +286,19 @@
 				172C165713423A8700495BDD /* MangaViewController */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		17543A6B135B896100723919 /* Leaves */ = {
+			isa = PBXGroup;
+			children = (
+				17543A62135B895300723919 /* LeavesCache.h */,
+				17543A63135B895300723919 /* LeavesCache.m */,
+				17543A64135B895300723919 /* LeavesView.h */,
+				17543A65135B895300723919 /* LeavesView.m */,
+				17543A66135B895300723919 /* LeavesViewController.h */,
+				17543A67135B895300723919 /* LeavesViewController.m */,
+			);
+			name = Leaves;
 			sourceTree = "<group>";
 		};
 		178B4958132E624300C2661F /* SubViews */ = {
@@ -494,6 +517,9 @@
 				17BB9D9E1337C1B600AFCE5F /* MangaInfoScrollViewController.m in Sources */,
 				17BB9DA41337E50F00AFCE5F /* PreviewViewController.m in Sources */,
 				172C165413423A7D00495BDD /* MangaViewController.m in Sources */,
+				17543A68135B895300723919 /* LeavesCache.m in Sources */,
+				17543A69135B895300723919 /* LeavesView.m in Sources */,
+				17543A6A135B895300723919 /* LeavesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

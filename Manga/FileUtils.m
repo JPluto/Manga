@@ -89,7 +89,24 @@
     return @"File contains no additional information.";
 }
 
-
++ (NSMutableArray*)scanMangaDir:(NSString*)mangaDir {
+    NSFileManager * filemanager = [NSFileManager defaultManager];
+    NSString *file;
+    NSMutableArray * imageArray = [NSMutableArray array];
+	
+    //Get all of the files in the source directory, loop thru them.
+    NSEnumerator *files = [filemanager enumeratorAtPath:mangaDir];
+    while((file = [files nextObject]) ) {
+        //Only looking for jpg
+        if( [[file pathExtension] isEqualToString:@"jpg"] || [[file pathExtension] isEqualToString:@"png"] )
+        {
+			[imageArray addObject:[mangaDir stringByAppendingPathComponent:file]];
+        }
+    }
+    
+    //We have nothing so return nil
+    return imageArray;
+}
 
 + (UIImage*)scanMangaDirForPreviewPic:(NSString*)mangaDir {
     
@@ -158,7 +175,8 @@
     NSString * cacheDirectory = [paths objectAtIndex:0];
     NSString * mangaCleanName = [sender.mangaName stringByDeletingPathExtension];
     NSString * mangaDirectory = [cacheDirectory stringByAppendingPathComponent:mangaCleanName];
-    
+    NSMutableArray * fileArray = [NSMutableArray array];
+	
     NSFileManager * filemanager = [NSFileManager defaultManager];
     
     //Dir does not exist: create it
@@ -167,7 +185,7 @@
     {
         [filemanager createDirectoryAtPath:mangaDirectory withIntermediateDirectories:NO attributes:nil error:NULL];
         [filemanager createDirectoryAtPath:[mangaDirectory stringByAppendingPathComponent:@"previews"] withIntermediateDirectories:NO attributes:nil error:NULL];
-        
+		
         for (FileInZipInfo *info in infos) {
             //NSLog(@"- %@ %@ %d (%d)", info.name, info.date, info.size, info.level);
             
@@ -213,7 +231,9 @@
                         [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                     }
                 }
-                
+				
+                [fileArray addObject:info.name];
+				
                 //Update Progress
                 count++;
                 progress = (float) count / [infos count];
@@ -271,6 +291,7 @@
 	[sender.zipProgressView setHidden:YES];
 	UIImage * previewPic = [FileUtils scanMangaDirForPreviewPic:mangaDirectory];
     [sender.previewPic performSelectorOnMainThread:@selector(setImage:) withObject:previewPic waitUntilDone:NO];
+	sender.delegate.filearray = fileArray;
 	
 	[pool drain];
 }
@@ -278,3 +299,16 @@
 
 
 @end
+
+
+CGAffineTransform aspectFit(CGRect innerRect, CGRect outerRect) {
+	CGFloat scaleFactor = MIN(outerRect.size.width/innerRect.size.width, outerRect.size.height/innerRect.size.height);
+	CGAffineTransform scale = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
+	CGRect scaledInnerRect = CGRectApplyAffineTransform(innerRect, scale);
+	CGAffineTransform translation = 
+	CGAffineTransformMakeTranslation((outerRect.size.width - scaledInnerRect.size.width) / 2 - scaledInnerRect.origin.x, 
+									 (outerRect.size.height - scaledInnerRect.size.height) / 2 - scaledInnerRect.origin.y);
+	return CGAffineTransformConcat(scale, translation);
+}
+
+

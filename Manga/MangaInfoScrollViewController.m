@@ -12,7 +12,7 @@
 @implementation MangaInfoScrollViewController
 
 @synthesize mangaName;
-
+@synthesize filearray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +38,8 @@
 
 - (void)DetailViewControllerReadTouched:(ReadMangaViewController *)controller{
 	MangaViewController * readView = [[[MangaViewController alloc] initWithNibName:@"MangaViewController" bundle:nil] autorelease];
+	[readView setMangaName:mangaName];
+	[readView setFileArray:filearray];
 	[self.navigationController pushViewController:readView animated:YES];
 }
 
@@ -72,6 +74,7 @@
         [detailViewController.ReadMangaButton setEnabled:YES];
         [detailViewController.zipProgressView setHidden:YES];
         [detailViewController.previewPic setImage: [FileUtils scanMangaDirForPreviewPic: mangaDirectory]];
+		self.filearray = [FileUtils scanMangaDir:mangaDirectory];
     }
 }
 
