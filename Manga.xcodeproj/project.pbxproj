@@ -24,6 +24,7 @@
 		172F36FE1354CF5800125CFB /* imageloading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 172F36FD1354CF5800125CFB /* imageloading@2x.png */; };
 		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
 		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
+		17347052135C881D00E90263 /* ComicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17347051135C881D00E90263 /* ComicImageView.m */; };
 		173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173F23971332ABA2003647F0 /* ReadMangaViewController.m */; };
 		173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173F23981332ABA2003647F0 /* ReadMangaViewController.xib */; };
 		174CC774132FED60002B4589 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 174CC773132FED60002B4589 /* Icon@2x.png */; };
@@ -55,6 +56,8 @@
 		17A800CA132EA22400AEB472 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B1132EA22400AEB472 /* trees.c */; };
 		17A800CB132EA22400AEB472 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B3132EA22400AEB472 /* uncompr.c */; };
 		17A800CC132EA22400AEB472 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 17A800B6132EA22400AEB472 /* zutil.c */; };
+		17BAE61C135F410500FE4723 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BAE61B135F410500FE4723 /* Default.png */; };
+		17BAE61F135F412A00FE4723 /* imageloading.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BAE61E135F412A00FE4723 /* imageloading.png */; };
 		17BB9D811337AADF00AFCE5F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17BB9D801337AADF00AFCE5F /* README.txt */; };
 		17BB9D9E1337C1B600AFCE5F /* MangaInfoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BB9D9C1337C1B600AFCE5F /* MangaInfoScrollViewController.m */; };
 		17BB9D9F1337C1B600AFCE5F /* MangaInfoScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BB9D9D1337C1B600AFCE5F /* MangaInfoScrollViewController.xib */; };
@@ -87,6 +90,8 @@
 		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		17347050135C881D00E90263 /* ComicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicImageView.h; sourceTree = "<group>"; };
+		17347051135C881D00E90263 /* ComicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicImageView.m; sourceTree = "<group>"; };
 		173F23961332ABA2003647F0 /* ReadMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMangaViewController.h; sourceTree = "<group>"; };
 		173F23971332ABA2003647F0 /* ReadMangaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMangaViewController.m; sourceTree = "<group>"; };
 		173F23981332ABA2003647F0 /* ReadMangaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadMangaViewController.xib; sourceTree = "<group>"; };
@@ -144,6 +149,8 @@
 		17A800B5132EA22400AEB472 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		17A800B6132EA22400AEB472 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		17A800B7132EA22400AEB472 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		17BAE61B135F410500FE4723 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		17BAE61E135F412A00FE4723 /* imageloading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageloading.png; sourceTree = "<group>"; };
 		17BB9D801337AADF00AFCE5F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		17BB9D9B1337C1B600AFCE5F /* MangaInfoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangaInfoScrollViewController.h; sourceTree = "<group>"; };
 		17BB9D9C1337C1B600AFCE5F /* MangaInfoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangaInfoScrollViewController.m; sourceTree = "<group>"; };
@@ -252,7 +259,9 @@
 				1723B5321354D35A009FB2EA /* appbg.png */,
 				172F36FF1354CFD300125CFB /* Icon */,
 				172F36FA1354CF2800125CFB /* Default@2x.png */,
+				17BAE61B135F410500FE4723 /* Default.png */,
 				172F36FD1354CF5800125CFB /* imageloading@2x.png */,
+				17BAE61E135F412A00FE4723 /* imageloading.png */,
 				1730D5F2132D839100923309 /* loading.png */,
 			);
 			name = Images;
@@ -304,6 +313,8 @@
 		178B4958132E624300C2661F /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				17347050135C881D00E90263 /* ComicImageView.h */,
+				17347051135C881D00E90263 /* ComicImageView.m */,
 				17A523191337A2ED00F881FB /* ReadMeDetailView.h */,
 				17A5231A1337A2ED00F881FB /* ReadMeDetailView.m */,
 				178B4959132E626200C2661F /* MangaDetailView.h */,
@@ -476,6 +487,8 @@
 				172F36FE1354CF5800125CFB /* imageloading@2x.png in Resources */,
 				1723B5331354D35A009FB2EA /* appbg.png in Resources */,
 				1723B5361354D94C009FB2EA /* headerbar.png in Resources */,
+				17BAE61C135F410500FE4723 /* Default.png in Resources */,
+				17BAE61F135F412A00FE4723 /* imageloading.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +533,7 @@
 				17543A68135B895300723919 /* LeavesCache.m in Sources */,
 				17543A69135B895300723919 /* LeavesView.m in Sources */,
 				17543A6A135B895300723919 /* LeavesViewController.m in Sources */,
+				17347052135C881D00E90263 /* ComicImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
