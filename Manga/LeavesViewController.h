@@ -18,5 +18,6 @@
 
 - (id)init;
 
+- (void)gotDoubleTap;
 @end
 

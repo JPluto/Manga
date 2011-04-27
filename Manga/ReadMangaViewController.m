@@ -69,7 +69,8 @@
     [titleLabel setText:[[mangaName lastPathComponent] stringByDeletingPathExtension]];
     
     //Add shadow
-    ReadMeView.layer.shadowOpacity = 0.5;
+	readMeDetailView.frame = ReadMeView.frame;
+	[readMeDetailView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"appbg.png"]]];
     
     //Animate the Readme Panel
     [self showReadMe];
@@ -102,8 +103,7 @@
     
     //Scroll to the preview
     CGRect frame = screenshotPreviewScrollView.frame;
-    frame.origin.x = frame.size.width;
-    frame.origin.y = 0;
+    [self loadScrollViewWithPage:0];
     [screenshotPreviewScrollView scrollRectToVisible:frame animated:YES];
 }
 

@@ -62,4 +62,10 @@
 	[leavesView reloadData];
 }
 
+
+- (void)gotDoubleTap {
+	NSLog(@"shouldn't happen -- leavesviewcontroller");
+
+}
+
 @end

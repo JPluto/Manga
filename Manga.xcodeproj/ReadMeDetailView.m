@@ -23,6 +23,7 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
+/*
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
@@ -33,9 +34,8 @@
     gradient.borderColor = [UIColor darkGrayColor].CGColor;
     gradient.borderWidth = 1.0f;
     [self.layer insertSublayer:gradient atIndex:0];
-
 }
-
+*/
 - (void)dealloc
 {
     [super dealloc];

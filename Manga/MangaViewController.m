@@ -18,6 +18,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		statusBarHidden = YES;
     }
     return self;
 }
@@ -35,6 +36,24 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	NSSet *allTouches = [event allTouches];
+	UITouch *touch = [[allTouches allObjects] objectAtIndex:0];
+			
+	switch([touch tapCount])
+	{
+		case 1://Single tap
+			//[self handleSingleTapAtPoint: tapPoint];
+			NSLog(@"SingleTap");
+		break;
+		case 2://Double tap.
+			[self gotDoubleTap];
+			NSLog(@"DoubleTap");
+		break;
+	}
+}
+
 #pragma mark - View lifecycle
 
 - (NSUInteger) numberOfPagesInLeavesView:(LeavesView*)leavesView {
@@ -49,7 +68,9 @@
 	CGContextDrawImage(ctx, imageRect, [image CGImage]);
 }
 
-- (void)tapDetectingImageView:(LeavesView *)view gotDoubleTapAtPoint:(CGPoint)tapPoint {
+- (void)gotDoubleTap {
+	[[UIApplication sharedApplication] setStatusBarHidden:!statusBarHidden withAnimation:UIStatusBarAnimationSlide];
+	statusBarHidden = !statusBarHidden;
 	[self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden animated:YES];
 }
 

@@ -27,10 +27,10 @@
 - (void)drawRect:(CGRect)rect
 {
     //Set shadow
-    self.layer.shadowOpacity = 1.0;
+/*    self.layer.shadowOpacity = 1.0;
     self.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.layer.shadowRadius = 10;
-
+*/
     //Gradient with border
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;

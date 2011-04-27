@@ -317,17 +317,6 @@ CGFloat distance(CGPoint a, CGPoint b);
 	CGPoint touchPoint = [touch locationInView:self];
 	BOOL dragged = distance(touchPoint, touchBeganPoint) > [self dragThreshold];
 	
-	NSSet *allTouches = [event allTouches];
-	if([allTouches count] == 1)
-	{
-		//Doubletap
-		if([touch tapCount] >= 1)
-		{
-			[self handleDoubleTapAtPoint: [touch locationInView:self]];
-			return;
-		}
-	}
-	
 	[CATransaction begin];
 	float duration;
 	if ((dragged && self.leafEdge < 0.5) || (!dragged && [self touchedNextPage])) {
@@ -353,6 +342,18 @@ CGFloat distance(CGPoint a, CGPoint b);
 	[CATransaction setValue:[NSNumber numberWithFloat:duration]
 					 forKey:kCATransactionAnimationDuration];
 	[CATransaction commit];
+	
+	switch([touch tapCount])
+	{
+		case 1://Single tap
+			//[self handleSingleTapAtPoint: tapPoint];
+			NSLog(@"SingleTap");
+			break;
+		case 2://Double tap.
+			[delegate gotDoubleTap];
+			NSLog(@"DoubleTap");
+			break;
+	}
 }
 
 - (void) layoutSubviews {
@@ -373,10 +374,6 @@ CGFloat distance(CGPoint a, CGPoint b);
 	}
 }
 
-- (void)handleDoubleTapAtPoint: (CGPoint) tapLocation  {
-    if ([delegate respondsToSelector:@selector(tapDetectingImageView:gotDoubleTapAtPoint:)])
-        [delegate tapDetectingImageView:self gotDoubleTapAtPoint:tapLocation];
-}
 
 @end
 

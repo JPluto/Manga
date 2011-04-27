@@ -60,7 +60,6 @@
 
 // refreshes the contents of all pages via the data source methods, much like -[UITableView reloadData]
 - (void) reloadData;
-- (void)handleDoubleTapAtPoint: (CGPoint) tapLocation;
 
 @end
 
@@ -76,7 +75,8 @@
 @protocol LeavesViewDelegate <NSObject>
 
 @optional
-- (void)tapDetectingImageView:(LeavesView *)view gotDoubleTapAtPoint:(CGPoint)tapPoint;
+
+-(void) gotDoubleTap;
 
 // called when the user touches up on the left or right side of the page, or finishes dragging the page
 - (void) leavesView:(LeavesView *)leavesView willTurnToPageAtIndex:(NSUInteger)pageIndex;

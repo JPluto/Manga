@@ -41,6 +41,7 @@
 	[readView setMangaName:mangaName];
 	[readView setFileArray:filearray];
 	[self.navigationController pushViewController:readView animated:YES];
+	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 }
 
 #pragma mark - View lifecycle
