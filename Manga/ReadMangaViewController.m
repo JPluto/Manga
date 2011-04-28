@@ -209,7 +209,7 @@
     NSString * previewPicDir;
     NSString *file;
     int count = 0;
-    [controller.previewImage setImage:[UIImage imageNamed:@"loading"]];
+    [controller.previewImage setImage:[UIImage imageNamed:@"imageloading"]];
     
     // Get all of the files in the source directory, loop thru them.
     NSEnumerator *files = [filemanager enumeratorAtPath:mangaDirectory];

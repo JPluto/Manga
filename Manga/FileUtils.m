@@ -15,21 +15,45 @@
 
 + (UIImage*)imageWithImage:(UIImage*)image;
 {
+	BOOL hasHighResScreen = NO;
+	if ([UIScreen instancesRespondToSelector:@selector(scale)]) {
+		CGFloat scale = [[UIScreen mainScreen] scale];
+		if (scale > 1.0) {
+			hasHighResScreen = YES;
+		}
+	}
+	
     float actualHeight = image.size.height;
     float actualWidth = image.size.width;
     float imgRatio = actualWidth/actualHeight;
-    float maxRatio = 217/254.0;
-    
+	
+	float maxRatio;
+	float height;
+	float width;
+	
+	if(hasHighResScreen == YES)
+	{
+		maxRatio = 434/508;
+		height = 508;
+		width = 434;
+	}
+	else
+	{
+		maxRatio = 217/254.0;
+		height = 254.0;
+		width = 217;
+    }
+	
     if(imgRatio!=maxRatio){
         if(imgRatio < maxRatio){
-            imgRatio = 254.0 / actualHeight;
+            imgRatio = height / actualHeight;
             actualWidth = imgRatio * actualWidth;
-            actualHeight = 254.0;
+            actualHeight = height;
         }
         else{
-            imgRatio = 217.0 / actualWidth;
+            imgRatio = width / actualWidth;
             actualHeight = imgRatio * actualHeight;
-            actualWidth = 217.0;
+            actualWidth = width;
         }
     }
     UIGraphicsBeginImageContext( CGSizeMake(actualWidth, actualHeight) );
@@ -213,23 +237,16 @@
                 int bytesRead= [read readDataWithBuffer:data];
                 [read finishedReading];
                 
-                NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:info.name];
+				//Rename the image
+				NSString*filePathAsPNG = [[info.name stringByDeletingPathExtension]stringByAppendingString:@".png"];
+                NSString * theTargetDir = [mangaDirectory stringByAppendingPathComponent:filePathAsPNG];
                 
-                [FileUtils createFileWithData:data atPath:theTargetDir];
+                [FileUtils createFileWithData:UIImagePNGRepresentation([UIImage imageWithData:data]) atPath:theTargetDir];
                 
-				//TODO: make all file types into png previews
                 if(count == 0 || count == 1 || count == 2)
                 {
-                    if([[info.name pathExtension] isEqualToString:@"jpg"])
-                    {
-                        NSData *filedata = UIImageJPEGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]], 0.9);
-                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
-                    }
-                    else if([[info.name pathExtension] isEqualToString:@"png"])
-                    {
-                        NSData *filedata = UIImagePNGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]]);
-                        [FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
-                    }
+                    NSData *filedata = UIImagePNGRepresentation([FileUtils imageWithImage:[UIImage imageWithData:data]]);
+					[FileUtils createFileWithData:filedata atPath:[[mangaDirectory stringByAppendingPathComponent:@"previews"] stringByAppendingPathComponent: [info.name lastPathComponent]]];
                 }
 				
                 [fileArray addObject:info.name];
@@ -242,6 +259,7 @@
                 
 				bytesRead =0;
                 targetPathComponents = nil;
+				filePathAsPNG = nil;
             }
             
             if([info.name hasSuffix:@".txt"] || [info.name hasSuffix:@".TXT"])

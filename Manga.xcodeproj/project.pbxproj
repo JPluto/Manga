@@ -23,7 +23,6 @@
 		172F36FB1354CF2800125CFB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 172F36FA1354CF2800125CFB /* Default@2x.png */; };
 		172F36FE1354CF5800125CFB /* imageloading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 172F36FD1354CF5800125CFB /* imageloading@2x.png */; };
 		1730D5EF132D7B6D00923309 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1730D5EE132D7B6D00923309 /* FileUtils.m */; };
-		1730D5F3132D839100923309 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 1730D5F2132D839100923309 /* loading.png */; };
 		17347052135C881D00E90263 /* ComicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17347051135C881D00E90263 /* ComicImageView.m */; };
 		173F23991332ABA2003647F0 /* ReadMangaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173F23971332ABA2003647F0 /* ReadMangaViewController.m */; };
 		173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173F23981332ABA2003647F0 /* ReadMangaViewController.xib */; };
@@ -91,7 +90,6 @@
 		172F36FD1354CF5800125CFB /* imageloading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imageloading@2x.png"; path = "../imageloading@2x.png"; sourceTree = "<group>"; };
 		1730D5ED132D7B6D00923309 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		1730D5EE132D7B6D00923309 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
-		1730D5F2132D839100923309 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		17347050135C881D00E90263 /* ComicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicImageView.h; sourceTree = "<group>"; };
 		17347051135C881D00E90263 /* ComicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicImageView.m; sourceTree = "<group>"; };
 		173F23961332ABA2003647F0 /* ReadMangaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMangaViewController.h; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 				17BAE61B135F410500FE4723 /* Default.png */,
 				172F36FD1354CF5800125CFB /* imageloading@2x.png */,
 				17BAE61E135F412A00FE4723 /* imageloading.png */,
-				1730D5F2132D839100923309 /* loading.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -481,7 +478,6 @@
 				17148E3B132044BA00552034 /* InfoPlist.strings in Resources */,
 				17148E44132044BA00552034 /* MainWindow.xib in Resources */,
 				17148E4A132044BA00552034 /* RootViewController.xib in Resources */,
-				1730D5F3132D839100923309 /* loading.png in Resources */,
 				174CC774132FED60002B4589 /* Icon@2x.png in Resources */,
 				174CC776132FED6A002B4589 /* Icon.png in Resources */,
 				173F239A1332ABA2003647F0 /* ReadMangaViewController.xib in Resources */,
